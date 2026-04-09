@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Events & Exhibitions - Black Peony Interiors</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Avenir:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    /* CSS Variables */
+    :root {
+      --black: #111111;
+      --ivory: #F7F3ED;
+      --taupe: #B7A89A;
+      --soft-stone: #D8D2C8;
+      --warm-gold: #C6A66B;
+      --white: #FFFFFF;
+      --light-gray: #ECECEC;
+    }
+
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Avenir', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      line-height: 1.6;
+      color: var(--black);
+      background-color: var(--white);
+    }
+
+    /* Typography */
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+
+    h1 {
+      font-size: 3.5rem;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+
+    h2 {
+      font-size: 2.5rem;
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+    }
+
+    h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 1rem;
+      line-height: 1.7;
+      margin-bottom: 1rem;
+    }
+
+    .label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--taupe);
+      margin-bottom: 1.5rem;
+    }
+
+    /* Container */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* Navigation */
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background-color: transparent;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+      padding: 1.5rem 0;
+    }
+
+    .nav--scrolled {
+      background-color: var(--white);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+      padding: 1rem 0;
+    }
+
+    .nav__inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav__logo {
+      height: 40px;
+      width: auto;
+      transition: opacity 0.3s ease;
+    }
+
+    .nav__logo:hover {
+      opacity: 0.8;
+    }
+
+    .nav__links {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .nav__link {
+      color: var(--black);
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: color 0.3s ease;
+      position: relative;
+      padding-bottom: 0.5rem;
+    }
+
+    .nav__link:hover {
+      color: var(--taupe);
+    }
+
+    .nav__link--active {
+      color: var(--taupe);
+      border-bottom: 1px solid var(--taupe);
+      padding-bottom: 0.2rem;
+    }
+
+    .nav__ig {
+      width: 20px;
+      height: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--black);
+      transition: color 0.3s ease;
+    }
+
+    .nav__ig svg {
+      width: 100%;
+      height: 100%;
+      fill: currentColor;
+    }
+
+    .nav__ig:hover {
+      color: var(--taupe);
+    }
+
+    .nav__cta {
+      background-color: var(--black);
+      color: var(--white);
+      padding: 0.75rem 1.5rem;
+      border-radius: 2px;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 600;
+      transition: background-color 0.3s ease;
+      display: inline-block;
+    }
+
+    .nav__cta:hover {
+      background-color: var(--taupe);
+    }
+
+    .nav__toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0.5rem;
+    }
+
+    .nav__toggle span {
+      width: 25px;
+      height: 2px;
+      background-color: var(--black);
+      transition: all 0.3s ease;
+    }
+
+    /* Header Section */
+    .page-header {
+      padding: 10rem 0 5rem;
+      margin-top: 80px;
+      text-align: center;
+      animation: fadeIn 0.8s ease-out;
+    }
+
+    .page-header__label {
+      margin-bottom: 1rem;
+    }
+
+    .page-header__title {
+      font-size: 3.5rem;
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      line-height: 1.2;
+    }
+
+    .page-header__subtitle {
+      font-size: 1.1rem;
+      color: var(--taupe);
+      max-width: 800px;
+      margin: 0 auto;
+      line-height: 1.8;
+    }
+
+    /* Events Section */
+    .events {
+      padding: 5rem 0;
+    }
+
+    .events__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 3rem;
+      margin-bottom: 4rem;
+    }
+
+    .event-card {
+      animation: fadeIn 0.8s ease-out 0.2s both;
+    }
+
+    .event-card__image {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background-color: var(--soft-stone);
+      margin-bottom: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--taupe);
+      font-size: 1rem;
+      font-style: italic;
+      border-radius: 2px;
+    }
+
+    .event-card--coming-soon {
+      position: relative;
+    }
+
+    .event-card--coming-soon .event-card__image {
+      background-color: var(--black);
+      color: var(--taupe);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      font-style: italic;
+      letter-spacing: 0.05em;
+    }
+
+    .event-card__title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.75rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      line-height: 1.3;
+    }
+
+    .event-card__subtitle {
+      color: var(--taupe);
+      font-size: 0.95rem;
+      font-weight: 500;
+      margin-bottom: 1.5rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .event-card__description {
+      color: var(--black);
+      font-size: 1rem;
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
+    }
+
+    .event-card__link {
+      display: inline-block;
+      color: var(--warm-gold);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      border-bottom: 2px solid var(--warm-gold);
+      padding-bottom: 0.3rem;
+      transition: all 0.3s ease;
+    }
+
+    .event-card__link:hover {
+      color: var(--black);
+      border-bottom-color: var(--black);
+    }
+
+    /* Quote Section */
+    .quote-section {
+      background-color: var(--ivory);
+      padding: 4rem 2rem;
+      margin: 4rem 0;
+      text-align: center;
+      border-radius: 2px;
+    }
+
+    .quote-section__text {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      font-weight: 500;
+      line-height: 1.8;
+      color: var(--black);
+      max-width: 800px;
+      margin: 0 auto;
+      font-style: italic;
+    }
+
+    /* Footer */
+    .footer {
+      background-color: var(--black);
+      color: var(--white);
+      padding: 4rem 0 2rem;
+      margin-top: 4rem;
+    }
+
+    .footer__inner {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 3rem;
+      margin-bottom: 3rem;
+      padding-bottom: 3rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .footer__brand {
+      margin-bottom: 1rem;
+    }
+
+    .footer__logo {
+      height: 40px;
+      width: auto;
+      margin-bottom: 1.5rem;
+      filter: brightness(0) invert(1);
+    }
+
+    .footer__tagline {
+      font-size: 0.95rem;
+      color: var(--soft-stone);
+      line-height: 1.6;
+    }
+
+    .footer__col-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      letter-spacing: 0.5px;
+    }
+
+    .footer__links {
+      list-style: none;
+    }
+
+    .footer__links li {
+      margin-bottom: 0.75rem;
+    }
+
+    .footer__links a {
+      color: var(--soft-stone);
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: color 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .footer__links a:hover {
+      color: var(--white);
+    }
+
+    .footer__ig-icon {
+      width: 16px;
+      height: 16px;
+      display: inline-block;
+    }
+
+    .footer__bottom {
+      text-align: center;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .footer__copyright {
+      font-size: 0.85rem;
+      color: var(--taupe);
+      margin-bottom: 0.5rem;
+    }
+
+    .footer__locations {
+      font-size: 0.85rem;
+      color: var(--taupe);
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .fade-in {
+      animation: fadeIn 0.8s ease-out;
+    }
+
+    /* Responsive */
+    @media (max-width: 968px) {
+      .nav__links {
+        gap: 1.5rem;
+      }
+
+      h1 {
+        font-size: 2.8rem;
+      }
+
+      h2 {
+        font-size: 2rem;
+      }
+
+      .page-header {
+        padding: 8rem 0 3rem;
+        margin-top: 70px;
+      }
+
+      .page-header__title {
+        font-size: 2.8rem;
+      }
+
+      .events__grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2.5rem;
+      }
+
+      .footer__inner {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav__toggle {
+        display: flex;
+      }
+
+      .nav__links {
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background-color: var(--white);
+        flex-direction: column;
+        gap: 1rem;
+        padding: 2rem;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+      }
+
+      .nav__links.active {
+        max-height: 500px;
+      }
+
+      .nav__toggle.active span:nth-child(1) {
+        transform: rotate(45deg) translate(10px, 10px);
+      }
+
+      .nav__toggle.active span:nth-child(2) {
+        opacity: 0;
+      }
+
+      .nav__toggle.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -7px);
+      }
+
+      h1 {
+        font-size: 2.2rem;
+      }
+
+      h2 {
+        font-size: 1.6rem;
+      }
+
+      .page-header {
+        padding: 6rem 0 2rem;
+        margin-top: 70px;
+      }
+
+      .page-header__title {
+        font-size: 2.2rem;
+      }
+
+      .page-header__subtitle {
+        font-size: 1rem;
+      }
+
+      .container {
+        padding: 0 1.5rem;
+      }
+
+      .nav__inner {
+        padding: 0 1.5rem;
+      }
+
+      .events {
+        padding: 3rem 0;
+      }
+
+      .event-card__title {
+        font-size: 1.5rem;
+      }
+
+      .quote-section__text {
+        font-size: 1.2rem;
+      }
+
+      .quote-section {
+        padding: 3rem 1.5rem;
+      }
+    }
+
+    @media (max-width: 640px) {
+      h1 {
+        font-size: 1.8rem;
+      }
+
+      h2 {
+        font-size: 1.4rem;
+      }
+
+      .page-header {
+        padding: 5rem 0 2rem;
+        margin-top: 60px;
+      }
+
+      .page-header__title {
+        font-size: 1.8rem;
+      }
+
+      p {
+        font-size: 0.95rem;
+      }
+
+      .container {
+        padding: 0 1rem;
+      }
+
+      .nav__inner {
+        padding: 0 1rem;
+      }
+
+      .nav__logo {
+        height: 35px;
+      }
+
+      .nav__links {
+        padding: 1.5rem;
+      }
+
+      .event-card__title {
+        font-size: 1.3rem;
+      }
+
+      .event-card__description {
+        font-size: 0.95rem;
+      }
+
+      .events__grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .quote-section__text {
+        font-size: 1rem;
+      }
+
+      .footer__inner {
+        gap: 1.5rem;
+      }
+
+      .footer__col-title {
+        font-size: 1rem;
+      }
+
+      .footer__links a {
+        font-size: 0.9rem;
+      }
+    }
+
+    /* Scroll behavior for nav */
+    .nav {
+      will-change: background-color, box-shadow;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="index.html">
+        <img src="logo-black.png" alt="Black Peony Interiors" class="nav__logo">
+      </a>
+      <ul class="nav__links" id="navLinks">
+        <li><a href="index.html#services" class="nav__link">Services</a></li>
+        <li><a href="index.html#approach" class="nav__link">Approach</a></li>
+        <li><a href="portfolio.html" class="nav__link">Portfolio</a></li>
+        <li><a href="events.html" class="nav__link nav__link--active">Events</a></li>
+        <li><a href="https://www.instagram.com/blackpeonyinteriors" class="nav__ig" aria-label="Instagram" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.336 3.608 1.311.975.975 1.249 2.242 1.311 3.608.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.062 1.366-.336 2.633-1.311 3.608-.975.975-2.242 1.249-3.608 1.311-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.366-.062-2.633-.336-3.608-1.311-.975-.975-1.249-2.242-1.311-3.608C2.175 15.584 2.163 15.204 2.163 12s.012-3.584.07-4.85c.062-1.366.336-2.633 1.311-3.608C4.519 2.567 5.786 2.293 7.152 2.233 8.418 2.175 8.798 2.163 12 2.163zm0-2.163C8.741 0 8.333.014 7.053.072 5.775.13 4.602.392 3.635 1.36 2.67 2.325 2.407 3.498 2.349 4.776.014 8.333 0 8.741 0 12s.014 3.667.072 4.947c.058 1.278.32 2.451 1.288 3.418.967.967 2.14 1.23 3.418 1.288C8.333 23.986 8.741 24 12 24s3.667-.014 4.947-.072c1.278-.058 2.451-.32 3.418-1.288.967-.967 1.23-2.14 1.288-3.418.058-1.28.072-1.688.072-4.947s-.014-3.667-.072-4.947c-.058-1.278-.32-2.451-1.288-3.418C19.398.392 18.225.13 16.947.072 15.667.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zm0 10.162a3.999 3.999 0 110-7.998 3.999 3.999 0 010 7.998zm6.406-10.845a1.44 1.44 0 11-2.88 0 1.44 1.44 0 012.88 0z"/></svg></a></li>
+        <li><a href="mailto:info@blackpeonyinteriors.com?subject=Design%20Consultation%20Inquiry" class="nav__cta">Book Consultation</a></li>
+      </ul>
+      <button class="nav__toggle" id="navToggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <section class="page-header">
+    <div class="container">
+      <div class="label page-header__label">Events & Exhibitions</div>
+      <h1 class="page-header__title">In the Design World</h1>
+      <p class="page-header__subtitle">Black Peony Interiors among the most celebrated names in interior design — from prestigious show houses to exclusive gallery events.</p>
+    </div>
+  </section>
+
+  <!-- Events Section -->
+  <section class="events">
+    <div class="container">
+      <div class="events__grid">
+        <!-- Event Card 1 -->
+        <div class="event-card">
+          <div class="event-card__image">Photo Coming Soon</div>
+          <h3 class="event-card__title">Kips Bay Decorator Show House</h3>
+          <p class="event-card__subtitle">New York</p>
+          <p class="event-card__description">One of the most prestigious design events in the country, the Kips Bay Decorator Show House has inspired and challenged designers since its founding in 1973. Top design talents are invited to transform distinguished residential spaces, creating inspiring rooms that showcase their vision and craft. Through decades of celebrated exhibitions, the show house has raised substantial support for the Kips Bay Boys & Girls Club.</p>
+          <a href="https://www.kipsbaydecoratorshowhouse.org" target="_blank" rel="noopener" class="event-card__link">Learn More</a>
+        </div>
+
+        <!-- Event Card 2 -->
+        <div class="event-card">
+          <div class="event-card__image">Photo Coming Soon</div>
+          <h3 class="event-card__title">Kips Bay Decorator Show House</h3>
+          <p class="event-card__subtitle">Dallas</p>
+          <p class="event-card__description">The Dallas edition brings the same caliber of design excellence to one of the most vibrant design communities in the South. Celebrated designers transform distinguished residential spaces into showcases of innovation and refined taste. This annual exhibition continues the decades-long tradition of elevating design while supporting meaningful philanthropic causes that strengthen communities.</p>
+          <a href="https://www.kipsbaydecoratorshowhouse.org" target="_blank" rel="noopener" class="event-card__link">Learn More</a>
+        </div>
+
+        <!-- Event Card 3 -->
+        <div class="event-card event-card--coming-soon">
+          <div class="event-card__image">Coming Soon</div>
+          <h3 class="event-card__title">Salone del Mobile Milano</h3>
+          <p class="event-card__subtitle">Milan, Italy</p>
+          <p class="event-card__description">The global benchmark for furniture and design since 1961, Salone del Mobile Milano is the world's most influential design fair. Each year, over 1,900 exhibitors from more than 30 countries gather across Milan to present the very best in furnishing, lighting, and material innovation. It is the event that defines the future of contemporary design — and a destination Black Peony is proud to attend.</p>
+          <a href="https://www.salonemilano.it/en" target="_blank" rel="noopener" class="event-card__link">Learn More</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quote Section -->
+  <section class="quote-section">
+    <div class="container">
+      <p class="quote-section__text">We believe great design extends beyond the home. These events inspire, challenge, and connect us with the broader world of design.</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <div class="footer__brand">
+          <img src="logo-light.png" alt="Black Peony Interiors" class="footer__logo">
+          <p class="footer__tagline">Bold, elegant interiors for discerning clients.</p>
+        </div>
+        <div class="footer__col">
+          <p class="footer__col-title">Navigate</p>
+          <ul class="footer__links">
+            <li><a href="index.html#services">Services</a></li>
+            <li><a href="index.html#approach">Approach</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="index.html#consultation">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <p class="footer__col-title">Connect</p>
+          <ul class="footer__links">
+            <li><a href="mailto:info@blackpeonyinteriors.com">info@blackpeonyinteriors.com</a></li>
+            <li><a href="https://www.instagram.com/blackpeonyinteriors" target="_blank" rel="noopener"><svg class="footer__ig-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.336 3.608 1.311.975.975 1.249 2.242 1.311 3.608.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.062 1.366-.336 2.633-1.311 3.608-.975.975-2.242 1.249-3.608 1.311-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.366-.062-2.633-.336-3.608-1.311-.975-.975-1.249-2.242-1.311-3.608C2.175 15.584 2.163 15.204 2.163 12s.012-3.584.07-4.85c.062-1.366.336-2.633 1.311-3.608C4.519 2.567 5.786 2.293 7.152 2.233 8.418 2.175 8.798 2.163 12 2.163zm0-2.163C8.741 0 8.333.014 7.053.072 5.775.13 4.602.392 3.635 1.36 2.67 2.325 2.407 3.498 2.349 4.776.014 8.333 0 8.741 0 12s.014 3.667.072 4.947c.058 1.278.32 2.451 1.288 3.418.967.967 2.14 1.23 3.418 1.288C8.333 23.986 8.741 24 12 24s3.667-.014 4.947-.072c1.278-.058 2.451-.32 3.418-1.288.967-.967 1.23-2.14 1.288-3.418.058-1.28.072-1.688.072-4.947s-.014-3.667-.072-4.947c-.058-1.278-.32-2.451-1.288-3.418C19.398.392 18.225.13 16.947.072 15.667.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zm0 10.162a3.999 3.999 0 110-7.998 3.999 3.999 0 010 7.998zm6.406-10.845a1.44 1.44 0 11-2.88 0 1.44 1.44 0 012.88 0z"/></svg>Instagram</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copyright">&copy; 2026 Black Peony Interiors. All rights reserved.</p>
+        <p class="footer__locations">The Woodlands &middot; Houston &middot; New York</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Navigation scroll behavior
+    const nav = document.getElementById('nav');
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        nav.classList.add('nav--scrolled');
+      } else {
+        nav.classList.remove('nav--scrolled');
+      }
+    });
+
+    // Mobile navigation toggle
+    navToggle.addEventListener('click', () => {
+      navToggle.classList.toggle('active');
+      navLinks.classList.toggle('active');
+    });
+
+    // Close mobile nav when a link is clicked
+    const navLinkElements = navLinks.querySelectorAll('.nav__link');
+    navLinkElements.forEach(link => {
+      link.addEventListener('click', () => {
+        navToggle.classList.remove('active');
+        navLinks.classList.remove('active');
+      });
+    });
+
+    // Intersection Observer for fade-in animations on scroll
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('fade-in');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.event-card').forEach(card => {
+      observer.observe(card);
+    });
+  </script>
+</body>
+</html>

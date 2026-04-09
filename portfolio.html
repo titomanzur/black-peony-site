@@ -1,0 +1,2307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio — Black Peony Interiors</title>
+  <meta name="description" content="Browse our curated collection of residential interiors, organized by room category. Black Peony Interiors — refined design for discerning clients.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&display=swap" rel="stylesheet">
+  <style>
+    /* ========================================
+       CSS RESET & BASE
+       ======================================== */
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --black: #111111;
+      --ivory: #F7F3ED;
+      --taupe: #B7A89A;
+      --soft-stone: #D8D2C8;
+      --muted-sage: #A7B09A;
+      --warm-gold: #C6A66B;
+      --white: #FFFFFF;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      font-family: 'Avenir', 'Avenir Next', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+      color: var(--black);
+      background-color: var(--ivory);
+      line-height: 1.7;
+      font-weight: 400;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      overflow-x: hidden;
+    }
+
+    /* ========================================
+       TYPOGRAPHY
+       ======================================== */
+    h1, h2, h3, h4 {
+      font-family: 'Cormorant Garamond', 'Georgia', serif;
+      font-weight: 400;
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+    }
+
+    h1 {
+      font-size: clamp(2.8rem, 5.5vw, 4.8rem);
+      font-weight: 300;
+    }
+
+    h2 {
+      font-size: clamp(2rem, 3.5vw, 3.2rem);
+      font-weight: 400;
+    }
+
+    h3 {
+      font-size: clamp(1.4rem, 2vw, 1.8rem);
+      font-weight: 500;
+    }
+
+    p {
+      font-size: 1rem;
+      line-height: 1.8;
+      color: #3a3a3a;
+    }
+
+    .label-text {
+      font-family: 'Avenir', 'Avenir Next', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      font-weight: 500;
+      color: var(--taupe);
+    }
+
+    /* ========================================
+       LAYOUT UTILITIES
+       ======================================== */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2.5rem;
+    }
+
+    .container--narrow {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 2.5rem;
+    }
+
+    .section-padding {
+      padding: 8rem 0;
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    /* ========================================
+       BUTTONS
+       ======================================== */
+    .btn {
+      display: inline-block;
+      font-family: 'Avenir', 'Avenir Next', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      font-weight: 500;
+      text-decoration: none;
+      padding: 1.1rem 3rem;
+      border: 1px solid var(--black);
+      color: var(--black);
+      background: transparent;
+      cursor: pointer;
+      transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      position: relative;
+    }
+
+    .btn:hover {
+      background: var(--black);
+      color: var(--ivory);
+    }
+
+    .btn--filled {
+      background: var(--black);
+      color: var(--ivory);
+      border-color: var(--black);
+    }
+
+    .btn--filled:hover {
+      background: #2a2a2a;
+      border-color: #2a2a2a;
+    }
+
+    .btn--ivory {
+      border-color: var(--ivory);
+      color: var(--ivory);
+    }
+
+    .btn--ivory:hover {
+      background: var(--ivory);
+      color: var(--black);
+    }
+
+    /* ========================================
+       NAVIGATION
+       ======================================== */
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      padding: 1.5rem 0;
+      transition: all 0.4s ease;
+    }
+
+    .nav--scrolled {
+      background: rgba(247, 243, 237, 0.95);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      padding: 1rem 0;
+      box-shadow: 0 1px 0 rgba(183, 168, 154, 0.15);
+    }
+
+    .nav__inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2.5rem;
+    }
+
+    .nav__logo {
+      height: 40px;
+      width: auto;
+      transition: opacity 0.3s ease;
+    }
+
+    .nav__logo:hover {
+      opacity: 0.7;
+    }
+
+    .nav__links {
+      display: flex;
+      align-items: center;
+      gap: 2.5rem;
+      list-style: none;
+    }
+
+    .nav__link {
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: var(--black);
+      font-weight: 500;
+      transition: color 0.3s ease;
+      position: relative;
+      padding-bottom: 0.25rem;
+    }
+
+    .nav__link:hover {
+      color: var(--taupe);
+    }
+
+    .nav__link--active {
+      border-bottom: 2px solid var(--taupe);
+    }
+
+    .nav__cta {
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: var(--black);
+      font-weight: 500;
+      padding: 0.7rem 1.8rem;
+      border: 1px solid var(--black);
+      transition: all 0.3s ease;
+    }
+
+    .nav__cta:hover {
+      background: var(--black);
+      color: var(--ivory);
+    }
+
+    /* Mobile nav toggle */
+    .nav__toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 5px;
+    }
+
+    .nav__toggle span {
+      display: block;
+      width: 24px;
+      height: 1.5px;
+      background: var(--black);
+      transition: all 0.3s ease;
+    }
+
+    /* ========================================
+       PAGE HEADER / HERO SECTION
+       ======================================== */
+    .page-header {
+      padding-top: 12rem;
+      padding-bottom: 4rem;
+      background: var(--ivory);
+      text-align: center;
+    }
+
+    .page-header__label {
+      margin-bottom: 1.5rem;
+    }
+
+    .page-header__title {
+      margin-bottom: 1.5rem;
+      color: var(--black);
+    }
+
+    .page-header__subtitle {
+      font-size: 1rem;
+      color: #666;
+      max-width: 560px;
+      margin: 0 auto;
+      line-height: 1.8;
+    }
+
+    /* ========================================
+       FILTER TABS
+       ======================================== */
+    .filter-tabs {
+      display: flex;
+      justify-content: center;
+      gap: 2.5rem;
+      padding: 3rem 2.5rem;
+      background: var(--white);
+      border-bottom: 1px solid rgba(183, 168, 154, 0.15);
+      flex-wrap: wrap;
+    }
+
+    .filter-tab {
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      font-weight: 500;
+      color: #666;
+      background: none;
+      border: none;
+      cursor: pointer;
+      transition: color 0.3s ease;
+      padding: 0.5rem 0;
+      border-bottom: 2px solid transparent;
+      position: relative;
+    }
+
+    .filter-tab:hover {
+      color: var(--black);
+    }
+
+    .filter-tab.active {
+      color: var(--black);
+      border-bottom-color: var(--taupe);
+    }
+
+    /* ========================================
+       PORTFOLIO GRID
+       ======================================== */
+    .portfolio-section {
+      background: var(--white);
+      padding: 4rem 2.5rem;
+    }
+
+    .portfolio-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      columns: 3;
+      column-gap: 1.5rem;
+    }
+
+    .portfolio-grid-item {
+      background: var(--soft-stone);
+      margin-bottom: 1.5rem;
+      break-inside: avoid;
+      position: relative;
+      overflow: hidden;
+      aspect-ratio: 3/4;
+      display: block;
+    }
+
+    .portfolio-grid-item figure {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .portfolio-grid-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    .portfolio-grid-item:hover img {
+      transform: scale(1.04);
+    }
+
+    .portfolio-grid-item__overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(17, 17, 17, 0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+
+    .portfolio-grid-item:hover .portfolio-grid-item__overlay {
+      opacity: 1;
+    }
+
+    .portfolio-grid-item__label {
+      color: var(--ivory);
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      font-weight: 500;
+      text-align: center;
+    }
+
+    .portfolio-grid-item.fade-out {
+      opacity: 0;
+      pointer-events: none;
+      position: absolute;
+      visibility: hidden;
+    }
+
+    /* ========================================
+       COVER GRID (All view — 6 category covers)
+       ======================================== */
+    .cover-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .cover-grid-item {
+      position: relative;
+      overflow: hidden;
+      aspect-ratio: 3/4;
+      cursor: pointer;
+      background: var(--soft-stone);
+    }
+
+    .cover-grid-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    .cover-grid-item:hover img {
+      transform: scale(1.04);
+    }
+
+    .cover-grid-item__overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(17, 17, 17, 0.45);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+
+    .cover-grid-item:hover .cover-grid-item__overlay {
+      opacity: 1;
+    }
+
+    .cover-grid-item__label {
+      color: var(--ivory);
+      font-family: 'Cormorant Garamond', 'Georgia', serif;
+      font-size: 1.6rem;
+      font-weight: 400;
+      letter-spacing: 0.05em;
+      text-align: center;
+    }
+
+    /* Back button (shown when inside a category) */
+    .back-btn {
+      display: none;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: 'Avenir', 'Avenir Next', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      font-weight: 500;
+      color: var(--black);
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      margin-bottom: 2rem;
+      transition: color 0.3s ease;
+    }
+
+    .back-btn:hover {
+      color: var(--taupe);
+    }
+
+    .back-btn.visible {
+      display: inline-flex;
+    }
+
+    /* ========================================
+       FOOTER
+       ======================================== */
+    .footer {
+      background: var(--black);
+      border-top: 1px solid rgba(183, 168, 154, 0.12);
+      padding: 4rem 0 3rem;
+    }
+
+    .footer__inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 3rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2.5rem;
+    }
+
+    .footer__brand {
+      flex: 1;
+    }
+
+    .footer__logo {
+      height: 30px;
+      width: auto;
+      filter: invert(1) brightness(10);
+      margin-bottom: 1rem;
+    }
+
+    .footer__tagline {
+      font-size: 0.85rem;
+      color: var(--taupe);
+      max-width: 280px;
+    }
+
+    .footer__col {
+      flex: 0 0 auto;
+    }
+
+    .footer__col-title {
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--taupe);
+      margin-bottom: 1.2rem;
+      font-weight: 500;
+    }
+
+    .footer__links {
+      list-style: none;
+    }
+
+    .footer__links li {
+      margin-bottom: 0.6rem;
+    }
+
+    .footer__links a {
+      font-size: 0.85rem;
+      color: rgba(247, 243, 237, 0.6);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .footer__links a:hover {
+      color: var(--ivory);
+    }
+
+    .footer__bottom {
+      margin-top: 4rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(183, 168, 154, 0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 2.5rem;
+      padding-right: 2.5rem;
+    }
+
+    .footer__copyright {
+      font-size: 0.75rem;
+      color: rgba(247, 243, 237, 0.35);
+    }
+
+    .footer__locations {
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(247, 243, 237, 0.35);
+    }
+
+    /* Instagram icon in footer */
+    .footer__ig-icon {
+      width: 14px;
+      height: 14px;
+      vertical-align: -2px;
+      margin-right: 0.3rem;
+    }
+
+    .footer__ig-icon path {
+      fill: rgba(247, 243, 237, 0.6);
+      transition: fill 0.3s ease;
+    }
+
+    a:hover .footer__ig-icon path {
+      fill: var(--ivory);
+    }
+
+    /* Nav Instagram icon */
+    .nav__ig {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      opacity: 0.7;
+      transition: opacity 0.3s ease;
+    }
+
+    .nav__ig:hover {
+      opacity: 1;
+    }
+
+    .nav__ig svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    .nav__ig svg path {
+      fill: var(--black);
+    }
+
+    /* ========================================
+       ANIMATIONS
+       ======================================== */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                  transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ========================================
+       RESPONSIVE
+       ======================================== */
+    @media (max-width: 968px) {
+      .footer__inner {
+        flex-direction: column;
+        gap: 2.5rem;
+      }
+
+      .footer__bottom {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+      }
+
+      .portfolio-grid {
+        columns: 2;
+      }
+
+      .cover-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .page-header {
+        padding-top: 8rem;
+        padding-bottom: 3rem;
+      }
+
+      .filter-tabs {
+        gap: 1.5rem;
+        padding: 2rem 1.5rem;
+      }
+
+      .filter-tab {
+        font-size: 0.7rem;
+      }
+
+      .portfolio-section {
+        padding: 2.5rem 1.5rem;
+      }
+
+      .portfolio-grid {
+        columns: 2;
+        column-gap: 1rem;
+      }
+
+      .portfolio-grid-item {
+        margin-bottom: 1rem;
+      }
+
+      .container, .container--narrow {
+        padding: 0 1.5rem;
+      }
+
+      .nav__inner {
+        padding: 0 1.5rem;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .nav__links {
+        display: none;
+      }
+
+      .nav__toggle {
+        display: flex;
+      }
+
+      .nav__links.active {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: rgba(247, 243, 237, 0.98);
+        backdrop-filter: blur(20px);
+        padding: 2rem 1.5rem;
+        gap: 1.5rem;
+        border-bottom: 1px solid rgba(183, 168, 154, 0.15);
+      }
+
+      .page-header {
+        padding-top: 6rem;
+        padding-bottom: 2.5rem;
+      }
+
+      .page-header__title {
+        font-size: 2rem;
+      }
+
+      .filter-tabs {
+        gap: 1rem;
+        padding: 1.5rem 1rem;
+        column-gap: 0.5rem;
+      }
+
+      .portfolio-grid {
+        columns: 1;
+      }
+
+      .cover-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+      }
+
+      .portfolio-section {
+        padding: 2rem 1.5rem;
+      }
+
+      .container, .container--narrow {
+        padding: 0 1.5rem;
+      }
+
+      .nav__inner {
+        padding: 0 1.5rem;
+      }
+
+      .footer__inner {
+        padding: 0 1.5rem;
+      }
+
+      .footer__bottom {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ====================================
+       NAVIGATION
+       ==================================== -->
+  <nav class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="index.html">
+        <img src="logo-black.png" alt="Black Peony Interiors" class="nav__logo">
+      </a>
+      <ul class="nav__links" id="navLinks">
+        <li><a href="index.html#services" class="nav__link">Services</a></li>
+        <li><a href="index.html#approach" class="nav__link">Approach</a></li>
+        <li><a href="portfolio.html" class="nav__link nav__link--active">Portfolio</a></li>
+        <li><a href="events.html" class="nav__link">Events</a></li>
+        <li><a href="https://www.instagram.com/blackpeonyinteriors" class="nav__ig" aria-label="Instagram" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.336 3.608 1.311.975.975 1.249 2.242 1.311 3.608.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.062 1.366-.336 2.633-1.311 3.608-.975.975-2.242 1.249-3.608 1.311-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.366-.062-2.633-.336-3.608-1.311-.975-.975-1.249-2.242-1.311-3.608C2.175 15.584 2.163 15.204 2.163 12s.012-3.584.07-4.85c.062-1.366.336-2.633 1.311-3.608C4.519 2.567 5.786 2.293 7.152 2.233 8.418 2.175 8.798 2.163 12 2.163zm0-2.163C8.741 0 8.333.014 7.053.072 5.775.13 4.602.392 3.635 1.36 2.67 2.325 2.407 3.498 2.349 4.776.014 8.333 0 8.741 0 12s.014 3.667.072 4.947c.058 1.278.32 2.451 1.288 3.418.967.967 2.14 1.23 3.418 1.288C8.333 23.986 8.741 24 12 24s3.667-.014 4.947-.072c1.278-.058 2.451-.32 3.418-1.288.967-.967 1.23-2.14 1.288-3.418.058-1.28.072-1.688.072-4.947s-.014-3.667-.072-4.947c-.058-1.278-.32-2.451-1.288-3.418C19.398.392 18.225.13 16.947.072 15.667.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zm0 10.162a3.999 3.999 0 110-7.998 3.999 3.999 0 010 7.998zm6.406-10.845a1.44 1.44 0 11-2.88 0 1.44 1.44 0 012.88 0z"/></svg></a></li>
+        <li><a href="mailto:info@blackpeonyinteriors.com?subject=Design%20Consultation%20Inquiry" class="nav__cta">Book Consultation</a></li>
+      </ul>
+      <button class="nav__toggle" id="navToggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ====================================
+       PAGE HEADER
+       ==================================== -->
+  <section class="page-header">
+    <div class="container">
+      <p class="label-text page-header__label">Portfolio</p>
+      <h1 class="page-header__title">Our Work</h1>
+      <p class="page-header__subtitle">Browse our curated collection of residential interiors, organized by space.</p>
+    </div>
+  </section>
+
+  <!-- ====================================
+       FILTER TABS
+       ==================================== -->
+  <div class="filter-tabs" id="filterTabs">
+    <button class="filter-tab active" data-filter="all">All</button>
+    <button class="filter-tab" data-filter="living">Living Room</button>
+    <button class="filter-tab" data-filter="dining">Dining Room</button>
+    <button class="filter-tab" data-filter="bedroom">Bedroom</button>
+    <button class="filter-tab" data-filter="kitchen">Kitchen</button>
+    <button class="filter-tab" data-filter="bathroom">Bathroom</button>
+    <button class="filter-tab" data-filter="unique">Unique</button>
+    <button class="filter-tab" data-filter="other">Other</button>
+  </div>
+
+  <!-- ====================================
+       PORTFOLIO GRID
+       ==================================== -->
+  <section class="portfolio-section">
+    <!-- Back to All button -->
+    <button class="back-btn" id="backBtn">&larr; Back to All</button>
+
+    <!-- Cover grid (shown on "All" view) -->
+    <div class="cover-grid" id="coverGrid">
+      <div class="cover-grid-item fade-in" data-category="living">
+        <img src="images/living/1-copy.jpg" alt="Living Room">
+        <div class="cover-grid-item__overlay">
+          <span class="cover-grid-item__label">Living Room</span>
+        </div>
+      </div>
+      <div class="cover-grid-item fade-in" data-category="dining">
+        <img src="images/dining/1.jpg" alt="Dining Room">
+        <div class="cover-grid-item__overlay">
+          <span class="cover-grid-item__label">Dining Room</span>
+        </div>
+      </div>
+      <div class="cover-grid-item fade-in" data-category="bedroom">
+        <img src="images/bedroom/14.jpg" alt="Bedroom">
+        <div class="cover-grid-item__overlay">
+          <span class="cover-grid-item__label">Bedroom</span>
+        </div>
+      </div>
+      <div class="cover-grid-item fade-in" data-category="kitchen">
+        <img src="images/kitchen/26.jpg" alt="Kitchen">
+        <div class="cover-grid-item__overlay">
+          <span class="cover-grid-item__label">Kitchen</span>
+        </div>
+      </div>
+      <div class="cover-grid-item fade-in" data-category="bathroom">
+        <img src="images/bathroom/13-1.jpg" alt="Bathroom">
+        <div class="cover-grid-item__overlay">
+          <span class="cover-grid-item__label">Bathroom</span>
+        </div>
+      </div>
+      <div class="cover-grid-item fade-in" data-category="unique">
+        <img src="images/unique/1.jpg" alt="Unique Spaces">
+        <div class="cover-grid-item__overlay">
+          <span class="cover-grid-item__label">Unique</span>
+        </div>
+      </div>
+      <div class="cover-grid-item fade-in" data-category="other">
+        <img src="images/other/2.jpg" alt="Other Spaces">
+        <div class="cover-grid-item__overlay">
+          <span class="cover-grid-item__label">Other</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Detail grid (hidden until a category is selected) -->
+    <div class="portfolio-grid" id="portfolioGrid" style="display: none;">
+      <!-- Living Room -->
+      <div class="portfolio-grid-item fade-in" data-category="living">
+        <figure>
+          <img src="images/living/1-copy.jpg" alt="Living Room Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Living Room</span>
+          </div>
+        </figure>
+      </div>
+      <div class="portfolio-grid-item fade-in" data-category="living">
+        <figure>
+          <img src="images/living/1-1.jpg" alt="Living Room Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Living Room</span>
+          </div>
+        </figure>
+      </div>
+      <div class="portfolio-grid-item fade-in" data-category="living">
+        <figure>
+          <img src="images/living/1.jpg" alt="Living Room Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Living Room</span>
+          </div>
+        </figure>
+      </div>
+      <div class="portfolio-grid-item fade-in" data-category="living">
+        <figure>
+          <img src="images/living/10-copy.jpg" alt="Living Room Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Living Room</span>
+          </div>
+        </figure>
+      </div>
+      <div class="portfolio-grid-item fade-in" data-category="living">
+        <figure>
+          <img src="images/living/10.jpg" alt="Living Room Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Living Room</span>
+          </div>
+        </figure>
+      </div>
+      <div class="portfolio-grid-item fade-in" data-category="living">
+        <figure>
+          <img src="images/living/11.jpg" alt="Living Room Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Living Room</span>
+          </div>
+        </figure>
+      </div>
+      <div class="portfolio-grid-item fade-in" data-category="living">
+        <figure>
+          <img src="images/living/12.jpg" alt="Living Room Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Living Room</span>
+          </div>
+        </figure>
+      </div>
+      <div class="portfolio-grid-item fade-in" data-category="living">
+        <figure>
+          <img src="images/living/14.jpg" alt="Living Room Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Living Room</span>
+          </div>
+        </figure>
+      </div>
+      <div class="portfolio-grid-item fade-in" data-category="living">
+        <figure>
+          <img src="images/living/15.jpg" alt="Living Room Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Living Room</span>
+          </div>
+        </figure>
+      </div>
+      <div class="portfolio-grid-item fade-in" data-category="living">
+        <figure>
+          <img src="images/living/16.jpg" alt="Living Room Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Living Room</span>
+          </div>
+        </figure>
+      </div>
+      <div class="portfolio-grid-item fade-in" data-category="living">
+        <figure>
+          <img src="images/living/17.jpg" alt="Living Room Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Living Room</span>
+          </div>
+        </figure>
+      </div>
+      <div class="portfolio-grid-item fade-in" data-category="living">
+        <figure>
+          <img src="images/living/18.jpg" alt="Living Room Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Living Room</span>
+          </div>
+        </figure>
+      </div>
+      <div class="portfolio-grid-item fade-in" data-category="living">
+        <figure>
+          <img src="images/living/2-copy.jpg" alt="Living Room Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Living Room</span>
+          </div>
+        </figure>
+      </div>
+      <div class="portfolio-grid-item fade-in" data-category="living">
+        <figure>
+          <img src="images/living/3-copy.jpg" alt="Living Room Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Living Room</span>
+          </div>
+        </figure>
+      </div>
+      <div class="portfolio-grid-item fade-in" data-category="living">
+        <figure>
+          <img src="images/living/3.jpg" alt="Living Room Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Living Room</span>
+          </div>
+        </figure>
+      </div>
+      <div class="portfolio-grid-item fade-in" data-category="living">
+        <figure>
+          <img src="images/living/38.jpg" alt="Living Room Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Living Room</span>
+          </div>
+        </figure>
+      </div>
+      <div class="portfolio-grid-item fade-in" data-category="living">
+        <figure>
+          <img src="images/living/39.jpg" alt="Living Room Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Living Room</span>
+          </div>
+        </figure>
+      </div>
+      <div class="portfolio-grid-item fade-in" data-category="living">
+        <figure>
+          <img src="images/living/45.jpg" alt="Living Room Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Living Room</span>
+          </div>
+        </figure>
+      </div>
+      <div class="portfolio-grid-item fade-in" data-category="living">
+        <figure>
+          <img src="images/living/46.jpg" alt="Living Room Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Living Room</span>
+          </div>
+        </figure>
+      </div>
+      <div class="portfolio-grid-item fade-in" data-category="living">
+        <figure>
+          <img src="images/living/47.jpg" alt="Living Room Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Living Room</span>
+          </div>
+        </figure>
+      </div>
+      <div class="portfolio-grid-item fade-in" data-category="living">
+        <figure>
+          <img src="images/living/50.jpg" alt="Living Room Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Living Room</span>
+          </div>
+        </figure>
+      </div>
+      <div class="portfolio-grid-item fade-in" data-category="living">
+        <figure>
+          <img src="images/living/8-copy.jpg" alt="Living Room Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Living Room</span>
+          </div>
+        </figure>
+      </div>
+      <div class="portfolio-grid-item fade-in" data-category="living">
+        <figure>
+          <img src="images/living/8.jpg" alt="Living Room Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Living Room</span>
+          </div>
+        </figure>
+      </div>
+      <div class="portfolio-grid-item fade-in" data-category="living">
+        <figure>
+          <img src="images/living/9-copy.jpg" alt="Living Room Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Living Room</span>
+          </div>
+        </figure>
+      </div>
+      <div class="portfolio-grid-item fade-in" data-category="living">
+        <figure>
+          <img src="images/living/9.jpg" alt="Living Room Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Living Room</span>
+          </div>
+        </figure>
+      </div>
+      <!-- Dining Room -->
+      <div class="portfolio-grid-item fade-in" data-category="dining">
+        <figure>
+          <img src="images/dining/1.jpg" alt="Dining Room Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Dining Room</span>
+          </div>
+        </figure>
+      </div>
+      <div class="portfolio-grid-item fade-in" data-category="dining">
+        <figure>
+          <img src="images/dining/10-copy-2.jpg" alt="Dining Room Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Dining Room</span>
+          </div>
+        </figure>
+      </div>
+      <div class="portfolio-grid-item fade-in" data-category="dining">
+        <figure>
+          <img src="images/dining/10.jpg" alt="Dining Room Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Dining Room</span>
+          </div>
+        </figure>
+      </div>
+      <div class="portfolio-grid-item fade-in" data-category="dining">
+        <figure>
+          <img src="images/dining/11-copy.jpg" alt="Dining Room Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Dining Room</span>
+          </div>
+        </figure>
+      </div>
+      <div class="portfolio-grid-item fade-in" data-category="dining">
+        <figure>
+          <img src="images/dining/11.jpg" alt="Dining Room Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Dining Room</span>
+          </div>
+        </figure>
+      </div>
+      <div class="portfolio-grid-item fade-in" data-category="dining">
+        <figure>
+          <img src="images/dining/12.jpg" alt="Dining Room Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Dining Room</span>
+          </div>
+        </figure>
+      </div>
+      <div class="portfolio-grid-item fade-in" data-category="dining">
+        <figure>
+          <img src="images/dining/13.jpg" alt="Dining Room Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Dining Room</span>
+          </div>
+        </figure>
+      </div>
+      <div class="portfolio-grid-item fade-in" data-category="dining">
+        <figure>
+          <img src="images/dining/14.jpg" alt="Dining Room Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Dining Room</span>
+          </div>
+        </figure>
+      </div>
+      <div class="portfolio-grid-item fade-in" data-category="dining">
+        <figure>
+          <img src="images/dining/16.jpg" alt="Dining Room Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Dining Room</span>
+          </div>
+        </figure>
+      </div>
+      <div class="portfolio-grid-item fade-in" data-category="dining">
+        <figure>
+          <img src="images/dining/2.jpg" alt="Dining Room Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Dining Room</span>
+          </div>
+        </figure>
+      </div>
+      <div class="portfolio-grid-item fade-in" data-category="dining">
+        <figure>
+          <img src="images/dining/21.jpg" alt="Dining Room Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Dining Room</span>
+          </div>
+        </figure>
+      </div>
+      <div class="portfolio-grid-item fade-in" data-category="dining">
+        <figure>
+          <img src="images/dining/3.jpg" alt="Dining Room Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Dining Room</span>
+          </div>
+        </figure>
+      </div>
+      <div class="portfolio-grid-item fade-in" data-category="dining">
+        <figure>
+          <img src="images/dining/37.jpg" alt="Dining Room Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Dining Room</span>
+          </div>
+        </figure>
+      </div>
+      <div class="portfolio-grid-item fade-in" data-category="dining">
+        <figure>
+          <img src="images/dining/38.jpg" alt="Dining Room Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Dining Room</span>
+          </div>
+        </figure>
+      </div>
+      <div class="portfolio-grid-item fade-in" data-category="dining">
+        <figure>
+          <img src="images/dining/39.jpg" alt="Dining Room Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Dining Room</span>
+          </div>
+        </figure>
+      </div>
+      <div class="portfolio-grid-item fade-in" data-category="dining">
+        <figure>
+          <img src="images/dining/4.jpg" alt="Dining Room Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Dining Room</span>
+          </div>
+        </figure>
+      </div>
+      <div class="portfolio-grid-item fade-in" data-category="dining">
+        <figure>
+          <img src="images/dining/40.jpg" alt="Dining Room Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Dining Room</span>
+          </div>
+        </figure>
+      </div>
+      <div class="portfolio-grid-item fade-in" data-category="dining">
+        <figure>
+          <img src="images/dining/41.jpg" alt="Dining Room Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Dining Room</span>
+          </div>
+        </figure>
+      </div>
+      <div class="portfolio-grid-item fade-in" data-category="dining">
+        <figure>
+          <img src="images/dining/5.jpg" alt="Dining Room Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Dining Room</span>
+          </div>
+        </figure>
+      </div>
+      <div class="portfolio-grid-item fade-in" data-category="dining">
+        <figure>
+          <img src="images/dining/51.jpg" alt="Dining Room Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Dining Room</span>
+          </div>
+        </figure>
+      </div>
+      <div class="portfolio-grid-item fade-in" data-category="dining">
+        <figure>
+          <img src="images/dining/52.jpg" alt="Dining Room Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Dining Room</span>
+          </div>
+        </figure>
+      </div>
+      <div class="portfolio-grid-item fade-in" data-category="dining">
+        <figure>
+          <img src="images/dining/53.jpg" alt="Dining Room Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Dining Room</span>
+          </div>
+        </figure>
+      </div>
+      <div class="portfolio-grid-item fade-in" data-category="dining">
+        <figure>
+          <img src="images/dining/6.jpg" alt="Dining Room Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Dining Room</span>
+          </div>
+        </figure>
+      </div>
+      <div class="portfolio-grid-item fade-in" data-category="dining">
+        <figure>
+          <img src="images/dining/7.jpg" alt="Dining Room Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Dining Room</span>
+          </div>
+        </figure>
+      </div>
+      <div class="portfolio-grid-item fade-in" data-category="dining">
+        <figure>
+          <img src="images/dining/8.jpg" alt="Dining Room Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Dining Room</span>
+          </div>
+        </figure>
+      </div>
+      <div class="portfolio-grid-item fade-in" data-category="dining">
+        <figure>
+          <img src="images/dining/9.jpg" alt="Dining Room Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Dining Room</span>
+          </div>
+        </figure>
+      </div>
+      <!-- Bedroom -->
+      <div class="portfolio-grid-item fade-in" data-category="bedroom">
+        <figure>
+          <img src="images/bedroom/14.jpg" alt="Bedroom Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Bedroom</span>
+          </div>
+        </figure>
+      </div>
+      <div class="portfolio-grid-item fade-in" data-category="bedroom">
+        <figure>
+          <img src="images/bedroom/15.jpg" alt="Bedroom Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Bedroom</span>
+          </div>
+        </figure>
+      </div>
+      <div class="portfolio-grid-item fade-in" data-category="bedroom">
+        <figure>
+          <img src="images/bedroom/16.jpg" alt="Bedroom Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Bedroom</span>
+          </div>
+        </figure>
+      </div>
+      <div class="portfolio-grid-item fade-in" data-category="bedroom">
+        <figure>
+          <img src="images/bedroom/17.jpg" alt="Bedroom Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Bedroom</span>
+          </div>
+        </figure>
+      </div>
+      <div class="portfolio-grid-item fade-in" data-category="bedroom">
+        <figure>
+          <img src="images/bedroom/26.jpg" alt="Bedroom Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Bedroom</span>
+          </div>
+        </figure>
+      </div>
+      <div class="portfolio-grid-item fade-in" data-category="bedroom">
+        <figure>
+          <img src="images/bedroom/27.jpg" alt="Bedroom Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Bedroom</span>
+          </div>
+        </figure>
+      </div>
+      <div class="portfolio-grid-item fade-in" data-category="bedroom">
+        <figure>
+          <img src="images/bedroom/28.jpg" alt="Bedroom Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Bedroom</span>
+          </div>
+        </figure>
+      </div>
+      <div class="portfolio-grid-item fade-in" data-category="bedroom">
+        <figure>
+          <img src="images/bedroom/29.jpg" alt="Bedroom Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Bedroom</span>
+          </div>
+        </figure>
+      </div>
+      <div class="portfolio-grid-item fade-in" data-category="bedroom">
+        <figure>
+          <img src="images/bedroom/30.jpg" alt="Bedroom Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Bedroom</span>
+          </div>
+        </figure>
+      </div>
+      <div class="portfolio-grid-item fade-in" data-category="bedroom">
+        <figure>
+          <img src="images/bedroom/31.jpg" alt="Bedroom Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Bedroom</span>
+          </div>
+        </figure>
+      </div>
+      <div class="portfolio-grid-item fade-in" data-category="bedroom">
+        <figure>
+          <img src="images/bedroom/34.jpg" alt="Bedroom Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Bedroom</span>
+          </div>
+        </figure>
+      </div>
+      <div class="portfolio-grid-item fade-in" data-category="bedroom">
+        <figure>
+          <img src="images/bedroom/35.jpg" alt="Bedroom Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Bedroom</span>
+          </div>
+        </figure>
+      </div>
+      <div class="portfolio-grid-item fade-in" data-category="bedroom">
+        <figure>
+          <img src="images/bedroom/44.jpg" alt="Bedroom Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Bedroom</span>
+          </div>
+        </figure>
+      </div>
+      <div class="portfolio-grid-item fade-in" data-category="bedroom">
+        <figure>
+          <img src="images/bedroom/64.jpg" alt="Bedroom Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Bedroom</span>
+          </div>
+        </figure>
+      </div>
+      <!-- Kitchen -->
+      <div class="portfolio-grid-item fade-in" data-category="kitchen">
+        <figure>
+          <img src="images/kitchen/26.jpg" alt="Kitchen Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Kitchen</span>
+          </div>
+        </figure>
+      </div>
+      <div class="portfolio-grid-item fade-in" data-category="kitchen">
+        <figure>
+          <img src="images/kitchen/43.jpg" alt="Kitchen Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Kitchen</span>
+          </div>
+        </figure>
+      </div>
+      <div class="portfolio-grid-item fade-in" data-category="kitchen">
+        <figure>
+          <img src="images/kitchen/45.jpg" alt="Kitchen Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Kitchen</span>
+          </div>
+        </figure>
+      </div>
+      <div class="portfolio-grid-item fade-in" data-category="kitchen">
+        <figure>
+          <img src="images/kitchen/47.jpg" alt="Kitchen Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Kitchen</span>
+          </div>
+        </figure>
+      </div>
+      <div class="portfolio-grid-item fade-in" data-category="kitchen">
+        <figure>
+          <img src="images/kitchen/48.jpg" alt="Kitchen Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Kitchen</span>
+          </div>
+        </figure>
+      </div>
+      <div class="portfolio-grid-item fade-in" data-category="kitchen">
+        <figure>
+          <img src="images/kitchen/49.jpg" alt="Kitchen Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Kitchen</span>
+          </div>
+        </figure>
+      </div>
+      <div class="portfolio-grid-item fade-in" data-category="kitchen">
+        <figure>
+          <img src="images/kitchen/59.jpg" alt="Kitchen Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Kitchen</span>
+          </div>
+        </figure>
+      </div>
+      <div class="portfolio-grid-item fade-in" data-category="kitchen">
+        <figure>
+          <img src="images/kitchen/60.jpg" alt="Kitchen Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Kitchen</span>
+          </div>
+        </figure>
+      </div>
+      <div class="portfolio-grid-item fade-in" data-category="kitchen">
+        <figure>
+          <img src="images/kitchen/61.jpg" alt="Kitchen Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Kitchen</span>
+          </div>
+        </figure>
+      </div>
+      <!-- Bathroom -->
+      <div class="portfolio-grid-item fade-in" data-category="bathroom">
+        <figure>
+          <img src="images/bathroom/13-1.jpg" alt="Bathroom Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Bathroom</span>
+          </div>
+        </figure>
+      </div>
+      <div class="portfolio-grid-item fade-in" data-category="bathroom">
+        <figure>
+          <img src="images/bathroom/13-2.jpg" alt="Bathroom Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Bathroom</span>
+          </div>
+        </figure>
+      </div>
+      <div class="portfolio-grid-item fade-in" data-category="bathroom">
+        <figure>
+          <img src="images/bathroom/36.jpg" alt="Bathroom Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Bathroom</span>
+          </div>
+        </figure>
+      </div>
+      <div class="portfolio-grid-item fade-in" data-category="bathroom">
+        <figure>
+          <img src="images/bathroom/54.jpg" alt="Bathroom Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Bathroom</span>
+          </div>
+        </figure>
+      </div>
+      <div class="portfolio-grid-item fade-in" data-category="bathroom">
+        <figure>
+          <img src="images/bathroom/55.jpg" alt="Bathroom Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Bathroom</span>
+          </div>
+        </figure>
+      </div>
+      <div class="portfolio-grid-item fade-in" data-category="bathroom">
+        <figure>
+          <img src="images/bathroom/56.jpg" alt="Bathroom Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Bathroom</span>
+          </div>
+        </figure>
+      </div>
+      <div class="portfolio-grid-item fade-in" data-category="bathroom">
+        <figure>
+          <img src="images/bathroom/57.jpg" alt="Bathroom Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Bathroom</span>
+          </div>
+        </figure>
+      </div>
+      <div class="portfolio-grid-item fade-in" data-category="bathroom">
+        <figure>
+          <img src="images/bathroom/58.jpg" alt="Bathroom Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Bathroom</span>
+          </div>
+        </figure>
+      </div>
+      <div class="portfolio-grid-item fade-in" data-category="bathroom">
+        <figure>
+          <img src="images/bathroom/6.jpg" alt="Bathroom Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Bathroom</span>
+          </div>
+        </figure>
+      </div>
+      <!-- Unique -->
+      <div class="portfolio-grid-item fade-in" data-category="unique">
+        <figure>
+          <img src="images/unique/0w4a3754.jpg" alt="Unique Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Unique</span>
+          </div>
+        </figure>
+      </div>
+      <div class="portfolio-grid-item fade-in" data-category="unique">
+        <figure>
+          <img src="images/unique/1.jpg" alt="Unique Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Unique</span>
+          </div>
+        </figure>
+      </div>
+      <div class="portfolio-grid-item fade-in" data-category="unique">
+        <figure>
+          <img src="images/unique/19-copy.jpg" alt="Unique Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Unique</span>
+          </div>
+        </figure>
+      </div>
+      <div class="portfolio-grid-item fade-in" data-category="unique">
+        <figure>
+          <img src="images/unique/19.jpg" alt="Unique Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Unique</span>
+          </div>
+        </figure>
+      </div>
+      <div class="portfolio-grid-item fade-in" data-category="unique">
+        <figure>
+          <img src="images/unique/2.jpg" alt="Unique Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Unique</span>
+          </div>
+        </figure>
+      </div>
+      <div class="portfolio-grid-item fade-in" data-category="unique">
+        <figure>
+          <img src="images/unique/20.jpg" alt="Unique Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Unique</span>
+          </div>
+        </figure>
+      </div>
+      <div class="portfolio-grid-item fade-in" data-category="unique">
+        <figure>
+          <img src="images/unique/21.jpg" alt="Unique Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Unique</span>
+          </div>
+        </figure>
+      </div>
+      <div class="portfolio-grid-item fade-in" data-category="unique">
+        <figure>
+          <img src="images/unique/22.jpg" alt="Unique Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Unique</span>
+          </div>
+        </figure>
+      </div>
+      <div class="portfolio-grid-item fade-in" data-category="unique">
+        <figure>
+          <img src="images/unique/23-copy.jpg" alt="Unique Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Unique</span>
+          </div>
+        </figure>
+      </div>
+      <div class="portfolio-grid-item fade-in" data-category="unique">
+        <figure>
+          <img src="images/unique/23.jpg" alt="Unique Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Unique</span>
+          </div>
+        </figure>
+      </div>
+      <div class="portfolio-grid-item fade-in" data-category="unique">
+        <figure>
+          <img src="images/unique/24-copy.jpg" alt="Unique Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Unique</span>
+          </div>
+        </figure>
+      </div>
+      <div class="portfolio-grid-item fade-in" data-category="unique">
+        <figure>
+          <img src="images/unique/24.jpg" alt="Unique Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Unique</span>
+          </div>
+        </figure>
+      </div>
+      <div class="portfolio-grid-item fade-in" data-category="unique">
+        <figure>
+          <img src="images/unique/25-copy.jpg" alt="Unique Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Unique</span>
+          </div>
+        </figure>
+      </div>
+      <div class="portfolio-grid-item fade-in" data-category="unique">
+        <figure>
+          <img src="images/unique/25.jpg" alt="Unique Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Unique</span>
+          </div>
+        </figure>
+      </div>
+      <div class="portfolio-grid-item fade-in" data-category="unique">
+        <figure>
+          <img src="images/unique/26.jpg" alt="Unique Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Unique</span>
+          </div>
+        </figure>
+      </div>
+      <div class="portfolio-grid-item fade-in" data-category="unique">
+        <figure>
+          <img src="images/unique/27.jpg" alt="Unique Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Unique</span>
+          </div>
+        </figure>
+      </div>
+      <div class="portfolio-grid-item fade-in" data-category="unique">
+        <figure>
+          <img src="images/unique/28.jpg" alt="Unique Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Unique</span>
+          </div>
+        </figure>
+      </div>
+      <div class="portfolio-grid-item fade-in" data-category="unique">
+        <figure>
+          <img src="images/unique/3.jpg" alt="Unique Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Unique</span>
+          </div>
+        </figure>
+      </div>
+      <div class="portfolio-grid-item fade-in" data-category="unique">
+        <figure>
+          <img src="images/unique/30.jpg" alt="Unique Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Unique</span>
+          </div>
+        </figure>
+      </div>
+      <div class="portfolio-grid-item fade-in" data-category="unique">
+        <figure>
+          <img src="images/unique/31-copy.jpg" alt="Unique Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Unique</span>
+          </div>
+        </figure>
+      </div>
+      <div class="portfolio-grid-item fade-in" data-category="unique">
+        <figure>
+          <img src="images/unique/31.jpg" alt="Unique Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Unique</span>
+          </div>
+        </figure>
+      </div>
+      <div class="portfolio-grid-item fade-in" data-category="unique">
+        <figure>
+          <img src="images/unique/32.jpg" alt="Unique Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Unique</span>
+          </div>
+        </figure>
+      </div>
+      <div class="portfolio-grid-item fade-in" data-category="unique">
+        <figure>
+          <img src="images/unique/33-copy.jpg" alt="Unique Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Unique</span>
+          </div>
+        </figure>
+      </div>
+      <div class="portfolio-grid-item fade-in" data-category="unique">
+        <figure>
+          <img src="images/unique/33.jpg" alt="Unique Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Unique</span>
+          </div>
+        </figure>
+      </div>
+      <div class="portfolio-grid-item fade-in" data-category="unique">
+        <figure>
+          <img src="images/unique/34.jpg" alt="Unique Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Unique</span>
+          </div>
+        </figure>
+      </div>
+      <div class="portfolio-grid-item fade-in" data-category="unique">
+        <figure>
+          <img src="images/unique/35.jpg" alt="Unique Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Unique</span>
+          </div>
+        </figure>
+      </div>
+      <div class="portfolio-grid-item fade-in" data-category="unique">
+        <figure>
+          <img src="images/unique/36.jpg" alt="Unique Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Unique</span>
+          </div>
+        </figure>
+      </div>
+      <div class="portfolio-grid-item fade-in" data-category="unique">
+        <figure>
+          <img src="images/unique/37.jpg" alt="Unique Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Unique</span>
+          </div>
+        </figure>
+      </div>
+      <div class="portfolio-grid-item fade-in" data-category="unique">
+        <figure>
+          <img src="images/unique/39.jpg" alt="Unique Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Unique</span>
+          </div>
+        </figure>
+      </div>
+      <div class="portfolio-grid-item fade-in" data-category="unique">
+        <figure>
+          <img src="images/unique/4.jpg" alt="Unique Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Unique</span>
+          </div>
+        </figure>
+      </div>
+      <div class="portfolio-grid-item fade-in" data-category="unique">
+        <figure>
+          <img src="images/unique/42-copy.jpg" alt="Unique Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Unique</span>
+          </div>
+        </figure>
+      </div>
+      <div class="portfolio-grid-item fade-in" data-category="unique">
+        <figure>
+          <img src="images/unique/42.jpg" alt="Unique Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Unique</span>
+          </div>
+        </figure>
+      </div>
+      <div class="portfolio-grid-item fade-in" data-category="unique">
+        <figure>
+          <img src="images/unique/43.jpg" alt="Unique Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Unique</span>
+          </div>
+        </figure>
+      </div>
+      <div class="portfolio-grid-item fade-in" data-category="unique">
+        <figure>
+          <img src="images/unique/43.jpg" alt="Unique Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Unique</span>
+          </div>
+        </figure>
+      </div>
+      <div class="portfolio-grid-item fade-in" data-category="unique">
+        <figure>
+          <img src="images/unique/44-copy.jpg" alt="Unique Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Unique</span>
+          </div>
+        </figure>
+      </div>
+      <div class="portfolio-grid-item fade-in" data-category="unique">
+        <figure>
+          <img src="images/unique/44.jpg" alt="Unique Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Unique</span>
+          </div>
+        </figure>
+      </div>
+      <div class="portfolio-grid-item fade-in" data-category="unique">
+        <figure>
+          <img src="images/unique/46.jpg" alt="Unique Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Unique</span>
+          </div>
+        </figure>
+      </div>
+      <div class="portfolio-grid-item fade-in" data-category="unique">
+        <figure>
+          <img src="images/unique/5.jpg" alt="Unique Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Unique</span>
+          </div>
+        </figure>
+      </div>
+      <div class="portfolio-grid-item fade-in" data-category="unique">
+        <figure>
+          <img src="images/unique/6.jpg" alt="Unique Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Unique</span>
+          </div>
+        </figure>
+      </div>
+      <div class="portfolio-grid-item fade-in" data-category="unique">
+        <figure>
+          <img src="images/unique/7.jpg" alt="Unique Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Unique</span>
+          </div>
+        </figure>
+      </div>
+      <div class="portfolio-grid-item fade-in" data-category="unique">
+        <figure>
+          <img src="images/unique/8.jpg" alt="Unique Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Unique</span>
+          </div>
+        </figure>
+      </div>
+      <!-- Other -->
+      <div class="portfolio-grid-item fade-in" data-category="other">
+        <figure>
+          <img src="images/other/0w4a3751.jpg" alt="Other Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Other</span>
+          </div>
+        </figure>
+      </div>
+      <div class="portfolio-grid-item fade-in" data-category="other">
+        <figure>
+          <img src="images/other/0w4a3755.jpg" alt="Other Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Other</span>
+          </div>
+        </figure>
+      </div>
+      <div class="portfolio-grid-item fade-in" data-category="other">
+        <figure>
+          <img src="images/other/0w4a3756.jpg" alt="Other Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Other</span>
+          </div>
+        </figure>
+      </div>
+      <div class="portfolio-grid-item fade-in" data-category="other">
+        <figure>
+          <img src="images/other/0w4a3759.jpg" alt="Other Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Other</span>
+          </div>
+        </figure>
+      </div>
+      <div class="portfolio-grid-item fade-in" data-category="other">
+        <figure>
+          <img src="images/other/13.jpg" alt="Other Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Other</span>
+          </div>
+        </figure>
+      </div>
+      <div class="portfolio-grid-item fade-in" data-category="other">
+        <figure>
+          <img src="images/other/18.jpg" alt="Other Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Other</span>
+          </div>
+        </figure>
+      </div>
+      <div class="portfolio-grid-item fade-in" data-category="other">
+        <figure>
+          <img src="images/other/19.jpg" alt="Other Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Other</span>
+          </div>
+        </figure>
+      </div>
+      <div class="portfolio-grid-item fade-in" data-category="other">
+        <figure>
+          <img src="images/other/2.jpg" alt="Other Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Other</span>
+          </div>
+        </figure>
+      </div>
+      <div class="portfolio-grid-item fade-in" data-category="other">
+        <figure>
+          <img src="images/other/20.jpg" alt="Other Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Other</span>
+          </div>
+        </figure>
+      </div>
+      <div class="portfolio-grid-item fade-in" data-category="other">
+        <figure>
+          <img src="images/other/22.jpg" alt="Other Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Other</span>
+          </div>
+        </figure>
+      </div>
+      <div class="portfolio-grid-item fade-in" data-category="other">
+        <figure>
+          <img src="images/other/24.jpg" alt="Other Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Other</span>
+          </div>
+        </figure>
+      </div>
+      <div class="portfolio-grid-item fade-in" data-category="other">
+        <figure>
+          <img src="images/other/28.jpg" alt="Other Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Other</span>
+          </div>
+        </figure>
+      </div>
+      <div class="portfolio-grid-item fade-in" data-category="other">
+        <figure>
+          <img src="images/other/29-copy.jpg" alt="Other Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Other</span>
+          </div>
+        </figure>
+      </div>
+      <div class="portfolio-grid-item fade-in" data-category="other">
+        <figure>
+          <img src="images/other/29.jpg" alt="Other Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Other</span>
+          </div>
+        </figure>
+      </div>
+      <div class="portfolio-grid-item fade-in" data-category="other">
+        <figure>
+          <img src="images/other/30.jpg" alt="Other Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Other</span>
+          </div>
+        </figure>
+      </div>
+      <div class="portfolio-grid-item fade-in" data-category="other">
+        <figure>
+          <img src="images/other/32.jpg" alt="Other Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Other</span>
+          </div>
+        </figure>
+      </div>
+      <div class="portfolio-grid-item fade-in" data-category="other">
+        <figure>
+          <img src="images/other/33.jpg" alt="Other Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Other</span>
+          </div>
+        </figure>
+      </div>
+      <div class="portfolio-grid-item fade-in" data-category="other">
+        <figure>
+          <img src="images/other/34.jpg" alt="Other Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Other</span>
+          </div>
+        </figure>
+      </div>
+      <div class="portfolio-grid-item fade-in" data-category="other">
+        <figure>
+          <img src="images/other/35.jpg" alt="Other Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Other</span>
+          </div>
+        </figure>
+      </div>
+      <div class="portfolio-grid-item fade-in" data-category="other">
+        <figure>
+          <img src="images/other/36.jpg" alt="Other Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Other</span>
+          </div>
+        </figure>
+      </div>
+      <div class="portfolio-grid-item fade-in" data-category="other">
+        <figure>
+          <img src="images/other/37.jpg" alt="Other Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Other</span>
+          </div>
+        </figure>
+      </div>
+      <div class="portfolio-grid-item fade-in" data-category="other">
+        <figure>
+          <img src="images/other/38.jpg" alt="Other Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Other</span>
+          </div>
+        </figure>
+      </div>
+      <div class="portfolio-grid-item fade-in" data-category="other">
+        <figure>
+          <img src="images/other/4-copy.jpg" alt="Other Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Other</span>
+          </div>
+        </figure>
+      </div>
+      <div class="portfolio-grid-item fade-in" data-category="other">
+        <figure>
+          <img src="images/other/40-copy.jpg" alt="Other Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Other</span>
+          </div>
+        </figure>
+      </div>
+      <div class="portfolio-grid-item fade-in" data-category="other">
+        <figure>
+          <img src="images/other/40.jpg" alt="Other Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Other</span>
+          </div>
+        </figure>
+      </div>
+      <div class="portfolio-grid-item fade-in" data-category="other">
+        <figure>
+          <img src="images/other/41-copy.jpg" alt="Other Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Other</span>
+          </div>
+        </figure>
+      </div>
+      <div class="portfolio-grid-item fade-in" data-category="other">
+        <figure>
+          <img src="images/other/41.jpg" alt="Other Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Other</span>
+          </div>
+        </figure>
+      </div>
+      <div class="portfolio-grid-item fade-in" data-category="other">
+        <figure>
+          <img src="images/other/42.jpg" alt="Other Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Other</span>
+          </div>
+        </figure>
+      </div>
+      <div class="portfolio-grid-item fade-in" data-category="other">
+        <figure>
+          <img src="images/other/5.jpg" alt="Other Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Other</span>
+          </div>
+        </figure>
+      </div>
+      <div class="portfolio-grid-item fade-in" data-category="other">
+        <figure>
+          <img src="images/other/6.jpg" alt="Other Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Other</span>
+          </div>
+        </figure>
+      </div>
+      <div class="portfolio-grid-item fade-in" data-category="other">
+        <figure>
+          <img src="images/other/62.jpg" alt="Other Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Other</span>
+          </div>
+        </figure>
+      </div>
+      <div class="portfolio-grid-item fade-in" data-category="other">
+        <figure>
+          <img src="images/other/63.jpg" alt="Other Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Other</span>
+          </div>
+        </figure>
+      </div>
+      <div class="portfolio-grid-item fade-in" data-category="other">
+        <figure>
+          <img src="images/other/65.jpg" alt="Other Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Other</span>
+          </div>
+        </figure>
+      </div>
+      <div class="portfolio-grid-item fade-in" data-category="other">
+        <figure>
+          <img src="images/other/7.jpg" alt="Other Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Other</span>
+          </div>
+        </figure>
+      </div>
+      <div class="portfolio-grid-item fade-in" data-category="other">
+        <figure>
+          <img src="images/other/9.jpg" alt="Other Interior">
+          <div class="portfolio-grid-item__overlay">
+            <span class="portfolio-grid-item__label">Other</span>
+          </div>
+        </figure>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ====================================
+       FOOTER
+       ==================================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <div class="footer__brand">
+          <img src="logo-light.png" alt="Black Peony Interiors" class="footer__logo">
+          <p class="footer__tagline">Bold, elegant interiors for discerning clients.</p>
+        </div>
+        <div class="footer__col">
+          <p class="footer__col-title">Navigate</p>
+          <ul class="footer__links">
+            <li><a href="index.html#services">Services</a></li>
+            <li><a href="index.html#approach">Approach</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="index.html#consultation">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <p class="footer__col-title">Connect</p>
+          <ul class="footer__links">
+            <li><a href="mailto:info@blackpeonyinteriors.com">info@blackpeonyinteriors.com</a></li>
+            <li><a href="https://www.instagram.com/blackpeonyinteriors" target="_blank" rel="noopener"><svg class="footer__ig-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.336 3.608 1.311.975.975 1.249 2.242 1.311 3.608.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.062 1.366-.336 2.633-1.311 3.608-.975.975-2.242 1.249-3.608 1.311-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.366-.062-2.633-.336-3.608-1.311-.975-.975-1.249-2.242-1.311-3.608C2.175 15.584 2.163 15.204 2.163 12s.012-3.584.07-4.85c.062-1.366.336-2.633 1.311-3.608C4.519 2.567 5.786 2.293 7.152 2.233 8.418 2.175 8.798 2.163 12 2.163zm0-2.163C8.741 0 8.333.014 7.053.072 5.775.13 4.602.392 3.635 1.36 2.67 2.325 2.407 3.498 2.349 4.776.014 8.333 0 8.741 0 12s.014 3.667.072 4.947c.058 1.278.32 2.451 1.288 3.418.967.967 2.14 1.23 3.418 1.288C8.333 23.986 8.741 24 12 24s3.667-.014 4.947-.072c1.278-.058 2.451-.32 3.418-1.288.967-.967 1.23-2.14 1.288-3.418.058-1.28.072-1.688.072-4.947s-.014-3.667-.072-4.947c-.058-1.278-.32-2.451-1.288-3.418C19.398.392 18.225.13 16.947.072 15.667.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zm0 10.162a3.999 3.999 0 110-7.998 3.999 3.999 0 010 7.998zm6.406-10.845a1.44 1.44 0 11-2.88 0 1.44 1.44 0 012.88 0z"/></svg>Instagram</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copyright">&copy; 2026 Black Peony Interiors. All rights reserved.</p>
+        <p class="footer__locations">The Woodlands &middot; Houston &middot; New York</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Navigation scrolling behavior
+    const nav = document.getElementById('nav');
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        nav.classList.add('nav--scrolled');
+      } else {
+        nav.classList.remove('nav--scrolled');
+      }
+    });
+
+    // Mobile nav toggle
+    navToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+
+    // Close mobile menu when a link is clicked
+    document.querySelectorAll('.nav__link, .nav__cta').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+      });
+    });
+
+    // Elements
+    const filterTabs = document.querySelectorAll('.filter-tab');
+    const coverGrid = document.getElementById('coverGrid');
+    const portfolioGrid = document.getElementById('portfolioGrid');
+    const portfolioItems = document.querySelectorAll('.portfolio-grid-item');
+    const backBtn = document.getElementById('backBtn');
+
+    // Show cover grid (All view)
+    function showCovers() {
+      coverGrid.style.display = 'grid';
+      portfolioGrid.style.display = 'none';
+      backBtn.classList.remove('visible');
+      // Reset active tab to All
+      filterTabs.forEach(t => t.classList.remove('active'));
+      document.querySelector('[data-filter="all"]').classList.add('active');
+      // Re-trigger fade-in on covers
+      document.querySelectorAll('.cover-grid-item').forEach(item => {
+        item.classList.remove('visible');
+        setTimeout(() => item.classList.add('visible'), 10);
+      });
+    }
+
+    // Show category detail grid
+    function showCategory(category) {
+      coverGrid.style.display = 'none';
+      portfolioGrid.style.display = 'block';
+      backBtn.classList.add('visible');
+
+      // Update active tab
+      filterTabs.forEach(t => t.classList.remove('active'));
+      const matchingTab = document.querySelector('[data-filter="' + category + '"]');
+      if (matchingTab) matchingTab.classList.add('active');
+
+      // Show only matching items
+      portfolioItems.forEach(item => {
+        const cat = item.getAttribute('data-category');
+        if (cat === category) {
+          item.style.display = 'block';
+          setTimeout(() => item.classList.add('visible'), 10);
+        } else {
+          item.classList.remove('visible');
+          item.style.display = 'none';
+        }
+      });
+
+      // Scroll to top of grid
+      document.querySelector('.portfolio-section').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    // Cover grid click — open that category
+    document.querySelectorAll('.cover-grid-item').forEach(item => {
+      item.addEventListener('click', () => {
+        const category = item.getAttribute('data-category');
+        showCategory(category);
+      });
+    });
+
+    // Filter tab clicks
+    filterTabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        const filter = tab.getAttribute('data-filter');
+        if (filter === 'all') {
+          showCovers();
+        } else {
+          showCategory(filter);
+        }
+      });
+    });
+
+    // Back button
+    backBtn.addEventListener('click', () => {
+      showCovers();
+      document.querySelector('.filter-tabs').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+
+    // Intersection Observer for fade-in animation on scroll
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -100px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    // Observe cover items and portfolio items
+    document.querySelectorAll('.cover-grid-item, .portfolio-grid-item').forEach(item => {
+      observer.observe(item);
+    });
+  </script>
+</body>
+</html>
