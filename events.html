@@ -256,6 +256,55 @@
       border-radius: 2px;
     }
 
+    .event-card__slideshow {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 3 / 4;
+      margin-bottom: 2rem;
+      border-radius: 2px;
+      overflow: hidden;
+    }
+
+    .event-card__slideshow img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      transition: opacity 0.8s ease;
+    }
+
+    .event-card__slideshow img.active {
+      opacity: 1;
+    }
+
+    .event-card__slideshow-dots {
+      position: absolute;
+      bottom: 12px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 6px;
+      z-index: 2;
+    }
+
+    .event-card__slideshow-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.5);
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      transition: background 0.3s ease;
+    }
+
+    .event-card__slideshow-dot.active {
+      background: rgba(255,255,255,0.95);
+    }
+
     .event-card--coming-soon {
       position: relative;
     }
@@ -267,93 +316,6 @@
       font-size: 1.3rem;
       font-style: italic;
       letter-spacing: 0.05em;
-    }
-
-    /* Image Carousel */
-    .event-carousel {
-      position: relative;
-      width: 100%;
-      aspect-ratio: 3 / 2;
-      overflow: hidden;
-      margin-bottom: 2rem;
-      border-radius: 2px;
-      background-color: var(--soft-stone);
-    }
-
-    .event-carousel__slide {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      opacity: 0;
-      transition: opacity 0.6s ease;
-    }
-
-    .event-carousel__slide.active {
-      opacity: 1;
-    }
-
-    .event-carousel__slide img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .event-carousel__btn {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background: rgba(17, 17, 17, 0.5);
-      color: var(--white);
-      border: none;
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-      cursor: pointer;
-      font-size: 1rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: background 0.3s ease;
-      z-index: 2;
-    }
-
-    .event-carousel__btn:hover {
-      background: rgba(17, 17, 17, 0.8);
-    }
-
-    .event-carousel__btn--prev {
-      left: 0.75rem;
-    }
-
-    .event-carousel__btn--next {
-      right: 0.75rem;
-    }
-
-    .event-carousel__dots {
-      position: absolute;
-      bottom: 0.75rem;
-      left: 50%;
-      transform: translateX(-50%);
-      display: flex;
-      gap: 0.4rem;
-      z-index: 2;
-    }
-
-    .event-carousel__dot {
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.5);
-      border: none;
-      cursor: pointer;
-      padding: 0;
-      transition: background 0.3s ease;
-    }
-
-    .event-carousel__dot.active {
-      background: var(--white);
     }
 
     .event-card__title {
@@ -714,7 +676,7 @@
   <nav class="nav" id="nav">
     <div class="nav__inner">
       <a href="index.html">
-        <img src="BlackPeony_Logotipo_Black_GO_alta.png" alt="Black Peony Interiors" class="nav__logo">
+        <img src="logo-black.png" alt="Black Peony Interiors" class="nav__logo">
       </a>
       <ul class="nav__links" id="navLinks">
         <li><a href="index.html#services" class="nav__link">Services</a></li>
@@ -747,7 +709,17 @@
       <div class="events__grid">
         <!-- Event Card 1 -->
         <div class="event-card">
-          <div class="event-card__image">Photo Coming Soon</div>
+          <div class="event-card__slideshow" data-slideshow>
+            <img src="images/events/kips-bay-nyc/a.jpg" alt="Kips Bay NYC" class="active">
+            <img src="images/events/kips-bay-nyc/b.jpg" alt="Kips Bay NYC">
+            <img src="images/events/kips-bay-nyc/c.jpg" alt="Kips Bay NYC">
+            <img src="images/events/kips-bay-nyc/d.jpg" alt="Kips Bay NYC">
+            <img src="images/events/kips-bay-nyc/e.jpg" alt="Kips Bay NYC">
+            <img src="images/events/kips-bay-nyc/f.jpg" alt="Kips Bay NYC">
+            <img src="images/events/kips-bay-nyc/g.jpg" alt="Kips Bay NYC">
+            <img src="images/events/kips-bay-nyc/h.jpg" alt="Kips Bay NYC">
+            <div class="event-card__slideshow-dots"></div>
+          </div>
           <h3 class="event-card__title">Kips Bay Decorator Show House</h3>
           <p class="event-card__subtitle">New York</p>
           <p class="event-card__description">One of the most prestigious design events in the country, the Kips Bay Decorator Show House has inspired and challenged designers since its founding in 1973. Top design talents are invited to transform distinguished residential spaces, creating inspiring rooms that showcase their vision and craft. Through decades of celebrated exhibitions, the show house has raised substantial support for the Kips Bay Boys & Girls Club.</p>
@@ -756,7 +728,14 @@
 
         <!-- Event Card 2 -->
         <div class="event-card">
-          <div class="event-card__image">Photo Coming Soon</div>
+          <div class="event-card__slideshow" data-slideshow>
+            <img src="images/events/kips-bay-dallas/a.jpg" alt="Kips Bay Dallas" class="active">
+            <img src="images/events/kips-bay-dallas/b.jpg" alt="Kips Bay Dallas">
+            <img src="images/events/kips-bay-dallas/c.jpg" alt="Kips Bay Dallas">
+            <img src="images/events/kips-bay-dallas/d.jpg" alt="Kips Bay Dallas">
+            <img src="images/events/kips-bay-dallas/e.jpg" alt="Kips Bay Dallas">
+            <div class="event-card__slideshow-dots"></div>
+          </div>
           <h3 class="event-card__title">Kips Bay Decorator Show House</h3>
           <p class="event-card__subtitle">Dallas</p>
           <p class="event-card__description">The Dallas edition brings the same caliber of design excellence to one of the most vibrant design communities in the South. Celebrated designers transform distinguished residential spaces into showcases of innovation and refined taste. This annual exhibition continues the decades-long tradition of elevating design while supporting meaningful philanthropic causes that strengthen communities.</p>
@@ -773,29 +752,19 @@
         </div>
 
         <!-- Event Card 4 -->
-        <div class="event-card">
-          <div class="event-carousel" id="tdwCarousel">
-            <div class="event-carousel__slide active"><img src="portfolio-images/texas-design-week/tdw-2026-1.jpg" alt="Texas Design Week 2026 - Speaker presentation" loading="lazy"></div>
-            <div class="event-carousel__slide"><img src="portfolio-images/texas-design-week/tdw-2026-2.jpg" alt="Texas Design Week 2026 - Audience view" loading="lazy"></div>
-            <div class="event-carousel__slide"><img src="portfolio-images/texas-design-week/tdw-2026-3.jpg" alt="Texas Design Week 2026 - They All Came to Barneys book" loading="lazy"></div>
-            <div class="event-carousel__slide"><img src="portfolio-images/texas-design-week/tdw-2026-4.jpg" alt="Texas Design Week 2026 - Vintage fashion photography" loading="lazy"></div>
-            <div class="event-carousel__slide"><img src="portfolio-images/texas-design-week/tdw-2026-5.jpg" alt="Texas Design Week 2026 - Speaker with microphone" loading="lazy"></div>
-            <div class="event-carousel__slide"><img src="portfolio-images/texas-design-week/tdw-2026-6.jpg" alt="Texas Design Week 2026 - Guests with book" loading="lazy"></div>
-            <div class="event-carousel__slide"><img src="portfolio-images/texas-design-week/tdw-2026-7.jpg" alt="Texas Design Week 2026 - Book signing" loading="lazy"></div>
-            <button class="event-carousel__btn event-carousel__btn--prev" aria-label="Previous image">&#8249;</button>
-            <button class="event-carousel__btn event-carousel__btn--next" aria-label="Next image">&#8250;</button>
-            <div class="event-carousel__dots">
-              <button class="event-carousel__dot active" data-index="0" aria-label="Image 1"></button>
-              <button class="event-carousel__dot" data-index="1" aria-label="Image 2"></button>
-              <button class="event-carousel__dot" data-index="2" aria-label="Image 3"></button>
-              <button class="event-carousel__dot" data-index="3" aria-label="Image 4"></button>
-              <button class="event-carousel__dot" data-index="4" aria-label="Image 5"></button>
-              <button class="event-carousel__dot" data-index="5" aria-label="Image 6"></button>
-              <button class="event-carousel__dot" data-index="6" aria-label="Image 7"></button>
-            </div>
-          </div>
-          <h3 class="event-card__title">Texas Design Week</h3>
-          <p class="event-card__subtitle">Houston, Texas &middot; April 2026</p>
+            <div class="event-card">
+                <div class="event-card__slideshow" data-slideshow>
+                    <img src="images/events/texas-design-week/a.jpg" alt="Texas Design Week 2026" class="active">
+                    <img src="images/events/texas-design-week/b.jpg" alt="Texas Design Week 2026">
+                    <img src="images/events/texas-design-week/c.jpg" alt="Texas Design Week 2026">
+                    <img src="images/events/texas-design-week/d.jpg" alt="Texas Design Week 2026">
+                    <img src="images/events/texas-design-week/e.jpg" alt="Texas Design Week 2026">
+                    <img src="images/events/texas-design-week/f.jpg" alt="Texas Design Week 2026">
+                    <img src="images/events/texas-design-week/g.jpg" alt="Texas Design Week 2026">
+                    <div class="event-card__slideshow-dots"></div>
+                </div>
+                <h3 class="event-card__title">Texas Design Week</h3>
+                <p class="event-card__subtitle">Houston, Texas &middot; April 2026</p>
           <p class="event-card__description">A curated three-day immersion into the world of high design at the Park House Houston, bringing together visionary creatives, global heritage brands, and influential voices shaping the future of interiors. Programming spans salon-style conversations with legendary designers, bespoke showroom tours curated by top tastemakers, and panels exploring design innovation and creative materiality.</p>
           <a href="https://www.texasdesignweek.com" target="_blank" rel="noopener" class="event-card__link">Learn More</a>
         </div>
@@ -815,7 +784,7 @@
     <div class="container">
       <div class="footer__inner">
         <div class="footer__brand">
-          <img src="BlackPeony_Logotipo_GO_alta.png" alt="Black Peony Interiors" class="footer__logo">
+          <img src="logo-light.png" alt="Black Peony Interiors" class="footer__logo">
           <p class="footer__tagline">Bold, elegant interiors for discerning clients.</p>
         </div>
         <div class="footer__col">
@@ -891,50 +860,35 @@
       observer.observe(card);
     });
 
-    // Image Carousel
-    document.querySelectorAll('.event-carousel').forEach(carousel => {
-      const slides = carousel.querySelectorAll('.event-carousel__slide');
-      const dots = carousel.querySelectorAll('.event-carousel__dot');
-      const prevBtn = carousel.querySelector('.event-carousel__btn--prev');
-      const nextBtn = carousel.querySelector('.event-carousel__btn--next');
+    // Event card slideshows
+    document.querySelectorAll('[data-slideshow]').forEach(slideshow => {
+      const images = slideshow.querySelectorAll('img');
+      const dotsContainer = slideshow.querySelector('.event-card__slideshow-dots');
       let current = 0;
-      let autoPlay;
+
+      // Create dots
+      images.forEach((_, i) => {
+        const dot = document.createElement('button');
+        dot.className = 'event-card__slideshow-dot' + (i === 0 ? ' active' : '');
+        dot.setAttribute('aria-label', 'Show image ' + (i + 1));
+        dot.addEventListener('click', () => goTo(i));
+        dotsContainer.appendChild(dot);
+      });
+
+      const dots = dotsContainer.querySelectorAll('.event-card__slideshow-dot');
 
       function goTo(index) {
-        slides[current].classList.remove('active');
+        images[current].classList.remove('active');
         dots[current].classList.remove('active');
-        current = (index + slides.length) % slides.length;
-        slides[current].classList.add('active');
+        current = index;
+        images[current].classList.add('active');
         dots[current].classList.add('active');
       }
 
-      function startAutoPlay() {
-        autoPlay = setInterval(() => goTo(current + 1), 4000);
-      }
-
-      function resetAutoPlay() {
-        clearInterval(autoPlay);
-        startAutoPlay();
-      }
-
-      prevBtn.addEventListener('click', () => { goTo(current - 1); resetAutoPlay(); });
-      nextBtn.addEventListener('click', () => { goTo(current + 1); resetAutoPlay(); });
-      dots.forEach(dot => {
-        dot.addEventListener('click', () => { goTo(parseInt(dot.dataset.index)); resetAutoPlay(); });
-      });
-
-      // Touch/swipe support
-      let touchStartX = 0;
-      carousel.addEventListener('touchstart', (e) => { touchStartX = e.touches[0].clientX; }, { passive: true });
-      carousel.addEventListener('touchend', (e) => {
-        const diff = touchStartX - e.changedTouches[0].clientX;
-        if (Math.abs(diff) > 50) {
-          diff > 0 ? goTo(current + 1) : goTo(current - 1);
-          resetAutoPlay();
-        }
-      }, { passive: true });
-
-      startAutoPlay();
+      // Auto-advance every 4 seconds
+      setInterval(() => {
+        goTo((current + 1) % images.length);
+      }, 4000);
     });
   </script>
 </body>
