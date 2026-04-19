@@ -25,7 +25,6 @@
       --soft-stone: #D8D2C8;
       --muted-sage: #A7B09A;
       --warm-gold: #C6A66B;
-      --rose-gold: #C49C8C;
       --white: #FFFFFF;
     }
 
@@ -164,14 +163,15 @@
       right: 0;
       z-index: 100;
       padding: 1.5rem 0;
-      background: var(--black);
       transition: all 0.4s ease;
     }
 
     .nav--scrolled {
-      background: var(--black);
+      background: rgba(247, 243, 237, 0.95);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
       padding: 1rem 0;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+      box-shadow: 0 1px 0 rgba(183, 168, 154, 0.15);
     }
 
     .nav__inner {
@@ -205,7 +205,7 @@
       letter-spacing: 0.2em;
       text-transform: uppercase;
       text-decoration: none;
-      color: var(--rose-gold);
+      color: var(--black);
       font-weight: 500;
       transition: color 0.3s ease;
       position: relative;
@@ -213,11 +213,11 @@
     }
 
     .nav__link:hover {
-      color: var(--ivory);
+      color: var(--taupe);
     }
 
     .nav__link--active {
-      border-bottom: 2px solid var(--rose-gold);
+      border-bottom: 2px solid var(--taupe);
     }
 
     .nav__cta {
@@ -228,15 +228,13 @@
       color: var(--black);
       font-weight: 500;
       padding: 0.7rem 1.8rem;
-      background: var(--rose-gold);
-      border: 1px solid var(--rose-gold);
+      border: 1px solid var(--black);
       transition: all 0.3s ease;
     }
 
     .nav__cta:hover {
-      background: var(--ivory);
-      border-color: var(--ivory);
-      color: var(--black);
+      background: var(--black);
+      color: var(--ivory);
     }
 
     /* Mobile nav toggle */
@@ -254,7 +252,7 @@
       display: block;
       width: 24px;
       height: 1.5px;
-      background: var(--rose-gold);
+      background: var(--black);
       transition: all 0.3s ease;
     }
 
@@ -507,6 +505,7 @@
     .footer__logo {
       height: 30px;
       width: auto;
+      filter: invert(1) brightness(10);
       margin-bottom: 1rem;
     }
 
@@ -610,7 +609,7 @@
     }
 
     .nav__ig svg path {
-      fill: var(--rose-gold);
+      fill: var(--black);
     }
 
     /* ========================================
@@ -705,10 +704,11 @@
         top: 100%;
         left: 0;
         right: 0;
-        background: var(--black);
+        background: rgba(247, 243, 237, 0.98);
+        backdrop-filter: blur(20px);
         padding: 2rem 1.5rem;
         gap: 1.5rem;
-        border-bottom: 1px solid rgba(196, 156, 140, 0.25);
+        border-bottom: 1px solid rgba(183, 168, 154, 0.15);
       }
 
       .page-header {
@@ -766,7 +766,7 @@
   <nav class="nav" id="nav">
     <div class="nav__inner">
       <a href="index.html">
-        <img src="BlackPeony_Logotipo_GO_alta.png" alt="Black Peony Interiors" class="nav__logo">
+        <img src="logo-black.png" alt="Black Peony Interiors" class="nav__logo">
       </a>
       <ul class="nav__links" id="navLinks">
         <li><a href="index.html#services" class="nav__link">Services</a></li>
@@ -819,43 +819,43 @@
     <!-- Cover grid (shown on "All" view) -->
     <div class="cover-grid" id="coverGrid">
       <div class="cover-grid-item fade-in" data-category="living">
-        <img src="portfolio-images/living/1-copy.jpg" alt="Living Room">
+        <img src="images/living/1-copy.jpg" alt="Living Room">
         <div class="cover-grid-item__overlay">
           <span class="cover-grid-item__label">Living Room</span>
         </div>
       </div>
       <div class="cover-grid-item fade-in" data-category="dining">
-        <img src="portfolio-images/dining/1.jpg" alt="Dining Room">
+        <img src="images/dining/1.jpg" alt="Dining Room">
         <div class="cover-grid-item__overlay">
           <span class="cover-grid-item__label">Dining Room</span>
         </div>
       </div>
       <div class="cover-grid-item fade-in" data-category="bedroom">
-        <img src="portfolio-images/bedroom/14.jpg" alt="Bedroom">
+        <img src="images/bedroom/14.jpg" alt="Bedroom">
         <div class="cover-grid-item__overlay">
           <span class="cover-grid-item__label">Bedroom</span>
         </div>
       </div>
       <div class="cover-grid-item fade-in" data-category="kitchen">
-        <img src="portfolio-images/kitchen/26.jpg" alt="Kitchen">
+        <img src="images/kitchen/26.jpg" alt="Kitchen">
         <div class="cover-grid-item__overlay">
           <span class="cover-grid-item__label">Kitchen</span>
         </div>
       </div>
       <div class="cover-grid-item fade-in" data-category="bathroom">
-        <img src="portfolio-images/bathroom/13.1.jpg" alt="Bathroom">
+        <img src="images/bathroom/13-1.jpg" alt="Bathroom">
         <div class="cover-grid-item__overlay">
           <span class="cover-grid-item__label">Bathroom</span>
         </div>
       </div>
       <div class="cover-grid-item fade-in" data-category="unique">
-        <img src="portfolio-images/unique/1.jpg" alt="Unique Spaces">
+        <img src="images/unique/0w4a3754.jpg" alt="Unique Spaces">
         <div class="cover-grid-item__overlay">
           <span class="cover-grid-item__label">Unique</span>
         </div>
       </div>
       <div class="cover-grid-item fade-in" data-category="other">
-        <img src="portfolio-images/other/2.jpg" alt="Other Spaces">
+        <img src="images/other/2.jpg" alt="Other Spaces">
         <div class="cover-grid-item__overlay">
           <span class="cover-grid-item__label">Other</span>
         </div>
@@ -867,7 +867,7 @@
       <!-- Living Room -->
       <div class="portfolio-grid-item fade-in" data-category="living">
         <figure>
-          <img src="portfolio-images/living/1-copy.jpg" alt="Living Room Interior">
+          <img src="images/living/1-copy.jpg" alt="Living Room Interior">
           <div class="portfolio-grid-item__overlay">
             <span class="portfolio-grid-item__label">Living Room</span>
           </div>
@@ -875,7 +875,7 @@
       </div>
       <div class="portfolio-grid-item fade-in" data-category="living">
         <figure>
-          <img src="portfolio-images/living/1.1.jpg" alt="Living Room Interior">
+          <img src="images/living/1-1.jpg" alt="Living Room Interior">
           <div class="portfolio-grid-item__overlay">
             <span class="portfolio-grid-item__label">Living Room</span>
           </div>
@@ -883,7 +883,7 @@
       </div>
       <div class="portfolio-grid-item fade-in" data-category="living">
         <figure>
-          <img src="portfolio-images/living/1.jpg" alt="Living Room Interior">
+          <img src="images/living/1.jpg" alt="Living Room Interior">
           <div class="portfolio-grid-item__overlay">
             <span class="portfolio-grid-item__label">Living Room</span>
           </div>
@@ -891,7 +891,7 @@
       </div>
       <div class="portfolio-grid-item fade-in" data-category="living">
         <figure>
-          <img src="portfolio-images/living/10-copy.jpg" alt="Living Room Interior">
+          <img src="images/living/10-copy.jpg" alt="Living Room Interior">
           <div class="portfolio-grid-item__overlay">
             <span class="portfolio-grid-item__label">Living Room</span>
           </div>
@@ -899,7 +899,7 @@
       </div>
       <div class="portfolio-grid-item fade-in" data-category="living">
         <figure>
-          <img src="portfolio-images/living/10.jpg" alt="Living Room Interior">
+          <img src="images/living/10.jpg" alt="Living Room Interior">
           <div class="portfolio-grid-item__overlay">
             <span class="portfolio-grid-item__label">Living Room</span>
           </div>
@@ -907,7 +907,7 @@
       </div>
       <div class="portfolio-grid-item fade-in" data-category="living">
         <figure>
-          <img src="portfolio-images/living/11.jpg" alt="Living Room Interior">
+          <img src="images/living/11.jpg" alt="Living Room Interior">
           <div class="portfolio-grid-item__overlay">
             <span class="portfolio-grid-item__label">Living Room</span>
           </div>
@@ -915,7 +915,7 @@
       </div>
       <div class="portfolio-grid-item fade-in" data-category="living">
         <figure>
-          <img src="portfolio-images/living/12.jpg" alt="Living Room Interior">
+          <img src="images/living/12.jpg" alt="Living Room Interior">
           <div class="portfolio-grid-item__overlay">
             <span class="portfolio-grid-item__label">Living Room</span>
           </div>
@@ -923,7 +923,7 @@
       </div>
       <div class="portfolio-grid-item fade-in" data-category="living">
         <figure>
-          <img src="portfolio-images/living/14.jpg" alt="Living Room Interior">
+          <img src="images/living/14.jpg" alt="Living Room Interior">
           <div class="portfolio-grid-item__overlay">
             <span class="portfolio-grid-item__label">Living Room</span>
           </div>
@@ -931,7 +931,7 @@
       </div>
       <div class="portfolio-grid-item fade-in" data-category="living">
         <figure>
-          <img src="portfolio-images/living/15.jpg" alt="Living Room Interior">
+          <img src="images/living/15.jpg" alt="Living Room Interior">
           <div class="portfolio-grid-item__overlay">
             <span class="portfolio-grid-item__label">Living Room</span>
           </div>
@@ -939,7 +939,7 @@
       </div>
       <div class="portfolio-grid-item fade-in" data-category="living">
         <figure>
-          <img src="portfolio-images/living/16.jpg" alt="Living Room Interior">
+          <img src="images/living/16.jpg" alt="Living Room Interior">
           <div class="portfolio-grid-item__overlay">
             <span class="portfolio-grid-item__label">Living Room</span>
           </div>
@@ -947,7 +947,7 @@
       </div>
       <div class="portfolio-grid-item fade-in" data-category="living">
         <figure>
-          <img src="portfolio-images/living/17.jpg" alt="Living Room Interior">
+          <img src="images/living/17.jpg" alt="Living Room Interior">
           <div class="portfolio-grid-item__overlay">
             <span class="portfolio-grid-item__label">Living Room</span>
           </div>
@@ -955,7 +955,7 @@
       </div>
       <div class="portfolio-grid-item fade-in" data-category="living">
         <figure>
-          <img src="portfolio-images/living/18.jpg" alt="Living Room Interior">
+          <img src="images/living/18.jpg" alt="Living Room Interior">
           <div class="portfolio-grid-item__overlay">
             <span class="portfolio-grid-item__label">Living Room</span>
           </div>
@@ -963,7 +963,7 @@
       </div>
       <div class="portfolio-grid-item fade-in" data-category="living">
         <figure>
-          <img src="portfolio-images/living/2-copy.jpg" alt="Living Room Interior">
+          <img src="images/living/2-copy.jpg" alt="Living Room Interior">
           <div class="portfolio-grid-item__overlay">
             <span class="portfolio-grid-item__label">Living Room</span>
           </div>
@@ -971,7 +971,7 @@
       </div>
       <div class="portfolio-grid-item fade-in" data-category="living">
         <figure>
-          <img src="portfolio-images/living/3-copy.jpg" alt="Living Room Interior">
+          <img src="images/living/3-copy.jpg" alt="Living Room Interior">
           <div class="portfolio-grid-item__overlay">
             <span class="portfolio-grid-item__label">Living Room</span>
           </div>
@@ -979,7 +979,7 @@
       </div>
       <div class="portfolio-grid-item fade-in" data-category="living">
         <figure>
-          <img src="portfolio-images/living/3.jpg" alt="Living Room Interior">
+          <img src="images/living/3.jpg" alt="Living Room Interior">
           <div class="portfolio-grid-item__overlay">
             <span class="portfolio-grid-item__label">Living Room</span>
           </div>
@@ -987,7 +987,7 @@
       </div>
       <div class="portfolio-grid-item fade-in" data-category="living">
         <figure>
-          <img src="portfolio-images/living/38.jpg" alt="Living Room Interior">
+          <img src="images/living/38.jpg" alt="Living Room Interior">
           <div class="portfolio-grid-item__overlay">
             <span class="portfolio-grid-item__label">Living Room</span>
           </div>
@@ -995,7 +995,7 @@
       </div>
       <div class="portfolio-grid-item fade-in" data-category="living">
         <figure>
-          <img src="portfolio-images/living/39.jpg" alt="Living Room Interior">
+          <img src="images/living/39.jpg" alt="Living Room Interior">
           <div class="portfolio-grid-item__overlay">
             <span class="portfolio-grid-item__label">Living Room</span>
           </div>
@@ -1003,7 +1003,7 @@
       </div>
       <div class="portfolio-grid-item fade-in" data-category="living">
         <figure>
-          <img src="portfolio-images/living/45.jpg" alt="Living Room Interior">
+          <img src="images/living/45.jpg" alt="Living Room Interior">
           <div class="portfolio-grid-item__overlay">
             <span class="portfolio-grid-item__label">Living Room</span>
           </div>
@@ -1011,7 +1011,7 @@
       </div>
       <div class="portfolio-grid-item fade-in" data-category="living">
         <figure>
-          <img src="portfolio-images/living/46.jpg" alt="Living Room Interior">
+          <img src="images/living/46.jpg" alt="Living Room Interior">
           <div class="portfolio-grid-item__overlay">
             <span class="portfolio-grid-item__label">Living Room</span>
           </div>
@@ -1019,7 +1019,7 @@
       </div>
       <div class="portfolio-grid-item fade-in" data-category="living">
         <figure>
-          <img src="portfolio-images/living/47.jpg" alt="Living Room Interior">
+          <img src="images/living/47.jpg" alt="Living Room Interior">
           <div class="portfolio-grid-item__overlay">
             <span class="portfolio-grid-item__label">Living Room</span>
           </div>
@@ -1027,7 +1027,7 @@
       </div>
       <div class="portfolio-grid-item fade-in" data-category="living">
         <figure>
-          <img src="portfolio-images/living/50.jpg" alt="Living Room Interior">
+          <img src="images/living/50.jpg" alt="Living Room Interior">
           <div class="portfolio-grid-item__overlay">
             <span class="portfolio-grid-item__label">Living Room</span>
           </div>
@@ -1035,7 +1035,7 @@
       </div>
       <div class="portfolio-grid-item fade-in" data-category="living">
         <figure>
-          <img src="portfolio-images/living/8-copy.jpg" alt="Living Room Interior">
+          <img src="images/living/8-copy.jpg" alt="Living Room Interior">
           <div class="portfolio-grid-item__overlay">
             <span class="portfolio-grid-item__label">Living Room</span>
           </div>
@@ -1043,7 +1043,7 @@
       </div>
       <div class="portfolio-grid-item fade-in" data-category="living">
         <figure>
-          <img src="portfolio-images/living/8.jpg" alt="Living Room Interior">
+          <img src="images/living/8.jpg" alt="Living Room Interior">
           <div class="portfolio-grid-item__overlay">
             <span class="portfolio-grid-item__label">Living Room</span>
           </div>
@@ -1051,7 +1051,7 @@
       </div>
       <div class="portfolio-grid-item fade-in" data-category="living">
         <figure>
-          <img src="portfolio-images/living/9-copy.jpg" alt="Living Room Interior">
+          <img src="images/living/9-copy.jpg" alt="Living Room Interior">
           <div class="portfolio-grid-item__overlay">
             <span class="portfolio-grid-item__label">Living Room</span>
           </div>
@@ -1059,7 +1059,7 @@
       </div>
       <div class="portfolio-grid-item fade-in" data-category="living">
         <figure>
-          <img src="portfolio-images/living/9.jpg" alt="Living Room Interior">
+          <img src="images/living/9.jpg" alt="Living Room Interior">
           <div class="portfolio-grid-item__overlay">
             <span class="portfolio-grid-item__label">Living Room</span>
           </div>
@@ -1068,7 +1068,7 @@
       <!-- Dining Room -->
       <div class="portfolio-grid-item fade-in" data-category="dining">
         <figure>
-          <img src="portfolio-images/dining/1.jpg" alt="Dining Room Interior">
+          <img src="images/dining/1.jpg" alt="Dining Room Interior">
           <div class="portfolio-grid-item__overlay">
             <span class="portfolio-grid-item__label">Dining Room</span>
           </div>
@@ -1076,7 +1076,7 @@
       </div>
       <div class="portfolio-grid-item fade-in" data-category="dining">
         <figure>
-          <img src="portfolio-images/dining/10-copy-2.jpg" alt="Dining Room Interior">
+          <img src="images/dining/10-copy-2.jpg" alt="Dining Room Interior">
           <div class="portfolio-grid-item__overlay">
             <span class="portfolio-grid-item__label">Dining Room</span>
           </div>
@@ -1084,7 +1084,7 @@
       </div>
       <div class="portfolio-grid-item fade-in" data-category="dining">
         <figure>
-          <img src="portfolio-images/dining/10.jpg" alt="Dining Room Interior">
+          <img src="images/dining/10.jpg" alt="Dining Room Interior">
           <div class="portfolio-grid-item__overlay">
             <span class="portfolio-grid-item__label">Dining Room</span>
           </div>
@@ -1092,7 +1092,7 @@
       </div>
       <div class="portfolio-grid-item fade-in" data-category="dining">
         <figure>
-          <img src="portfolio-images/dining/11-copy.jpg" alt="Dining Room Interior">
+          <img src="images/dining/11-copy.jpg" alt="Dining Room Interior">
           <div class="portfolio-grid-item__overlay">
             <span class="portfolio-grid-item__label">Dining Room</span>
           </div>
@@ -1100,7 +1100,7 @@
       </div>
       <div class="portfolio-grid-item fade-in" data-category="dining">
         <figure>
-          <img src="portfolio-images/dining/11.jpg" alt="Dining Room Interior">
+          <img src="images/dining/11.jpg" alt="Dining Room Interior">
           <div class="portfolio-grid-item__overlay">
             <span class="portfolio-grid-item__label">Dining Room</span>
           </div>
@@ -1108,7 +1108,7 @@
       </div>
       <div class="portfolio-grid-item fade-in" data-category="dining">
         <figure>
-          <img src="portfolio-images/dining/12.jpg" alt="Dining Room Interior">
+          <img src="images/dining/12.jpg" alt="Dining Room Interior">
           <div class="portfolio-grid-item__overlay">
             <span class="portfolio-grid-item__label">Dining Room</span>
           </div>
@@ -1116,7 +1116,7 @@
       </div>
       <div class="portfolio-grid-item fade-in" data-category="dining">
         <figure>
-          <img src="portfolio-images/dining/13.jpg" alt="Dining Room Interior">
+          <img src="images/dining/13.jpg" alt="Dining Room Interior">
           <div class="portfolio-grid-item__overlay">
             <span class="portfolio-grid-item__label">Dining Room</span>
           </div>
@@ -1124,7 +1124,7 @@
       </div>
       <div class="portfolio-grid-item fade-in" data-category="dining">
         <figure>
-          <img src="portfolio-images/dining/14.jpg" alt="Dining Room Interior">
+          <img src="images/dining/14.jpg" alt="Dining Room Interior">
           <div class="portfolio-grid-item__overlay">
             <span class="portfolio-grid-item__label">Dining Room</span>
           </div>
@@ -1132,7 +1132,7 @@
       </div>
       <div class="portfolio-grid-item fade-in" data-category="dining">
         <figure>
-          <img src="portfolio-images/dining/16.jpg" alt="Dining Room Interior">
+          <img src="images/dining/16.jpg" alt="Dining Room Interior">
           <div class="portfolio-grid-item__overlay">
             <span class="portfolio-grid-item__label">Dining Room</span>
           </div>
@@ -1140,7 +1140,7 @@
       </div>
       <div class="portfolio-grid-item fade-in" data-category="dining">
         <figure>
-          <img src="portfolio-images/dining/2.jpg" alt="Dining Room Interior">
+          <img src="images/dining/2.jpg" alt="Dining Room Interior">
           <div class="portfolio-grid-item__overlay">
             <span class="portfolio-grid-item__label">Dining Room</span>
           </div>
@@ -1148,7 +1148,7 @@
       </div>
       <div class="portfolio-grid-item fade-in" data-category="dining">
         <figure>
-          <img src="portfolio-images/dining/21.jpg" alt="Dining Room Interior">
+          <img src="images/dining/21.jpg" alt="Dining Room Interior">
           <div class="portfolio-grid-item__overlay">
             <span class="portfolio-grid-item__label">Dining Room</span>
           </div>
@@ -1156,7 +1156,7 @@
       </div>
       <div class="portfolio-grid-item fade-in" data-category="dining">
         <figure>
-          <img src="portfolio-images/dining/3.jpg" alt="Dining Room Interior">
+          <img src="images/dining/3.jpg" alt="Dining Room Interior">
           <div class="portfolio-grid-item__overlay">
             <span class="portfolio-grid-item__label">Dining Room</span>
           </div>
@@ -1164,7 +1164,7 @@
       </div>
       <div class="portfolio-grid-item fade-in" data-category="dining">
         <figure>
-          <img src="portfolio-images/dining/37.jpg" alt="Dining Room Interior">
+          <img src="images/dining/37.jpg" alt="Dining Room Interior">
           <div class="portfolio-grid-item__overlay">
             <span class="portfolio-grid-item__label">Dining Room</span>
           </div>
@@ -1172,7 +1172,7 @@
       </div>
       <div class="portfolio-grid-item fade-in" data-category="dining">
         <figure>
-          <img src="portfolio-images/dining/38.jpg" alt="Dining Room Interior">
+          <img src="images/dining/38.jpg" alt="Dining Room Interior">
           <div class="portfolio-grid-item__overlay">
             <span class="portfolio-grid-item__label">Dining Room</span>
           </div>
@@ -1180,7 +1180,7 @@
       </div>
       <div class="portfolio-grid-item fade-in" data-category="dining">
         <figure>
-          <img src="portfolio-images/dining/39.jpg" alt="Dining Room Interior">
+          <img src="images/dining/39.jpg" alt="Dining Room Interior">
           <div class="portfolio-grid-item__overlay">
             <span class="portfolio-grid-item__label">Dining Room</span>
           </div>
@@ -1188,7 +1188,7 @@
       </div>
       <div class="portfolio-grid-item fade-in" data-category="dining">
         <figure>
-          <img src="portfolio-images/dining/4.jpg" alt="Dining Room Interior">
+          <img src="images/dining/4.jpg" alt="Dining Room Interior">
           <div class="portfolio-grid-item__overlay">
             <span class="portfolio-grid-item__label">Dining Room</span>
           </div>
@@ -1196,7 +1196,7 @@
       </div>
       <div class="portfolio-grid-item fade-in" data-category="dining">
         <figure>
-          <img src="portfolio-images/dining/40.jpg" alt="Dining Room Interior">
+          <img src="images/dining/40.jpg" alt="Dining Room Interior">
           <div class="portfolio-grid-item__overlay">
             <span class="portfolio-grid-item__label">Dining Room</span>
           </div>
@@ -1204,7 +1204,7 @@
       </div>
       <div class="portfolio-grid-item fade-in" data-category="dining">
         <figure>
-          <img src="portfolio-images/dining/41.jpg" alt="Dining Room Interior">
+          <img src="images/dining/41.jpg" alt="Dining Room Interior">
           <div class="portfolio-grid-item__overlay">
             <span class="portfolio-grid-item__label">Dining Room</span>
           </div>
@@ -1212,7 +1212,7 @@
       </div>
       <div class="portfolio-grid-item fade-in" data-category="dining">
         <figure>
-          <img src="portfolio-images/dining/5.jpg" alt="Dining Room Interior">
+          <img src="images/dining/5.jpg" alt="Dining Room Interior">
           <div class="portfolio-grid-item__overlay">
             <span class="portfolio-grid-item__label">Dining Room</span>
           </div>
@@ -1220,7 +1220,7 @@
       </div>
       <div class="portfolio-grid-item fade-in" data-category="dining">
         <figure>
-          <img src="portfolio-images/dining/51.jpg" alt="Dining Room Interior">
+          <img src="images/dining/51.jpg" alt="Dining Room Interior">
           <div class="portfolio-grid-item__overlay">
             <span class="portfolio-grid-item__label">Dining Room</span>
           </div>
@@ -1228,7 +1228,7 @@
       </div>
       <div class="portfolio-grid-item fade-in" data-category="dining">
         <figure>
-          <img src="portfolio-images/dining/52.jpg" alt="Dining Room Interior">
+          <img src="images/dining/52.jpg" alt="Dining Room Interior">
           <div class="portfolio-grid-item__overlay">
             <span class="portfolio-grid-item__label">Dining Room</span>
           </div>
@@ -1236,7 +1236,7 @@
       </div>
       <div class="portfolio-grid-item fade-in" data-category="dining">
         <figure>
-          <img src="portfolio-images/dining/53.jpg" alt="Dining Room Interior">
+          <img src="images/dining/53.jpg" alt="Dining Room Interior">
           <div class="portfolio-grid-item__overlay">
             <span class="portfolio-grid-item__label">Dining Room</span>
           </div>
@@ -1244,7 +1244,7 @@
       </div>
       <div class="portfolio-grid-item fade-in" data-category="dining">
         <figure>
-          <img src="portfolio-images/dining/6.jpg" alt="Dining Room Interior">
+          <img src="images/dining/6.jpg" alt="Dining Room Interior">
           <div class="portfolio-grid-item__overlay">
             <span class="portfolio-grid-item__label">Dining Room</span>
           </div>
@@ -1252,7 +1252,7 @@
       </div>
       <div class="portfolio-grid-item fade-in" data-category="dining">
         <figure>
-          <img src="portfolio-images/dining/7.jpg" alt="Dining Room Interior">
+          <img src="images/dining/7.jpg" alt="Dining Room Interior">
           <div class="portfolio-grid-item__overlay">
             <span class="portfolio-grid-item__label">Dining Room</span>
           </div>
@@ -1260,7 +1260,7 @@
       </div>
       <div class="portfolio-grid-item fade-in" data-category="dining">
         <figure>
-          <img src="portfolio-images/dining/8.jpg" alt="Dining Room Interior">
+          <img src="images/dining/8.jpg" alt="Dining Room Interior">
           <div class="portfolio-grid-item__overlay">
             <span class="portfolio-grid-item__label">Dining Room</span>
           </div>
@@ -1268,7 +1268,7 @@
       </div>
       <div class="portfolio-grid-item fade-in" data-category="dining">
         <figure>
-          <img src="portfolio-images/dining/9.jpg" alt="Dining Room Interior">
+          <img src="images/dining/9.jpg" alt="Dining Room Interior">
           <div class="portfolio-grid-item__overlay">
             <span class="portfolio-grid-item__label">Dining Room</span>
           </div>
@@ -1277,7 +1277,7 @@
       <!-- Bedroom -->
       <div class="portfolio-grid-item fade-in" data-category="bedroom">
         <figure>
-          <img src="portfolio-images/bedroom/14.jpg" alt="Bedroom Interior">
+          <img src="images/bedroom/14.jpg" alt="Bedroom Interior">
           <div class="portfolio-grid-item__overlay">
             <span class="portfolio-grid-item__label">Bedroom</span>
           </div>
@@ -1285,7 +1285,7 @@
       </div>
       <div class="portfolio-grid-item fade-in" data-category="bedroom">
         <figure>
-          <img src="portfolio-images/bedroom/15.jpg" alt="Bedroom Interior">
+          <img src="images/bedroom/15.jpg" alt="Bedroom Interior">
           <div class="portfolio-grid-item__overlay">
             <span class="portfolio-grid-item__label">Bedroom</span>
           </div>
@@ -1293,7 +1293,7 @@
       </div>
       <div class="portfolio-grid-item fade-in" data-category="bedroom">
         <figure>
-          <img src="portfolio-images/bedroom/16.jpg" alt="Bedroom Interior">
+          <img src="images/bedroom/16.jpg" alt="Bedroom Interior">
           <div class="portfolio-grid-item__overlay">
             <span class="portfolio-grid-item__label">Bedroom</span>
           </div>
@@ -1301,7 +1301,7 @@
       </div>
       <div class="portfolio-grid-item fade-in" data-category="bedroom">
         <figure>
-          <img src="portfolio-images/bedroom/17.jpg" alt="Bedroom Interior">
+          <img src="images/bedroom/17.jpg" alt="Bedroom Interior">
           <div class="portfolio-grid-item__overlay">
             <span class="portfolio-grid-item__label">Bedroom</span>
           </div>
@@ -1309,7 +1309,7 @@
       </div>
       <div class="portfolio-grid-item fade-in" data-category="bedroom">
         <figure>
-          <img src="portfolio-images/bedroom/26.jpg" alt="Bedroom Interior">
+          <img src="images/bedroom/26.jpg" alt="Bedroom Interior">
           <div class="portfolio-grid-item__overlay">
             <span class="portfolio-grid-item__label">Bedroom</span>
           </div>
@@ -1317,7 +1317,7 @@
       </div>
       <div class="portfolio-grid-item fade-in" data-category="bedroom">
         <figure>
-          <img src="portfolio-images/bedroom/27.jpg" alt="Bedroom Interior">
+          <img src="images/bedroom/27.jpg" alt="Bedroom Interior">
           <div class="portfolio-grid-item__overlay">
             <span class="portfolio-grid-item__label">Bedroom</span>
           </div>
@@ -1325,7 +1325,7 @@
       </div>
       <div class="portfolio-grid-item fade-in" data-category="bedroom">
         <figure>
-          <img src="portfolio-images/bedroom/28.jpg" alt="Bedroom Interior">
+          <img src="images/bedroom/28.jpg" alt="Bedroom Interior">
           <div class="portfolio-grid-item__overlay">
             <span class="portfolio-grid-item__label">Bedroom</span>
           </div>
@@ -1333,7 +1333,7 @@
       </div>
       <div class="portfolio-grid-item fade-in" data-category="bedroom">
         <figure>
-          <img src="portfolio-images/bedroom/29.jpg" alt="Bedroom Interior">
+          <img src="images/bedroom/29.jpg" alt="Bedroom Interior">
           <div class="portfolio-grid-item__overlay">
             <span class="portfolio-grid-item__label">Bedroom</span>
           </div>
@@ -1341,7 +1341,7 @@
       </div>
       <div class="portfolio-grid-item fade-in" data-category="bedroom">
         <figure>
-          <img src="portfolio-images/bedroom/30.jpg" alt="Bedroom Interior">
+          <img src="images/bedroom/30.jpg" alt="Bedroom Interior">
           <div class="portfolio-grid-item__overlay">
             <span class="portfolio-grid-item__label">Bedroom</span>
           </div>
@@ -1349,7 +1349,7 @@
       </div>
       <div class="portfolio-grid-item fade-in" data-category="bedroom">
         <figure>
-          <img src="portfolio-images/bedroom/31.jpg" alt="Bedroom Interior">
+          <img src="images/bedroom/31.jpg" alt="Bedroom Interior">
           <div class="portfolio-grid-item__overlay">
             <span class="portfolio-grid-item__label">Bedroom</span>
           </div>
@@ -1357,7 +1357,7 @@
       </div>
       <div class="portfolio-grid-item fade-in" data-category="bedroom">
         <figure>
-          <img src="portfolio-images/bedroom/34.jpg" alt="Bedroom Interior">
+          <img src="images/bedroom/34.jpg" alt="Bedroom Interior">
           <div class="portfolio-grid-item__overlay">
             <span class="portfolio-grid-item__label">Bedroom</span>
           </div>
@@ -1365,7 +1365,7 @@
       </div>
       <div class="portfolio-grid-item fade-in" data-category="bedroom">
         <figure>
-          <img src="portfolio-images/bedroom/35.jpg" alt="Bedroom Interior">
+          <img src="images/bedroom/35.jpg" alt="Bedroom Interior">
           <div class="portfolio-grid-item__overlay">
             <span class="portfolio-grid-item__label">Bedroom</span>
           </div>
@@ -1373,7 +1373,7 @@
       </div>
       <div class="portfolio-grid-item fade-in" data-category="bedroom">
         <figure>
-          <img src="portfolio-images/bedroom/44.jpg" alt="Bedroom Interior">
+          <img src="images/bedroom/44.jpg" alt="Bedroom Interior">
           <div class="portfolio-grid-item__overlay">
             <span class="portfolio-grid-item__label">Bedroom</span>
           </div>
@@ -1381,7 +1381,7 @@
       </div>
       <div class="portfolio-grid-item fade-in" data-category="bedroom">
         <figure>
-          <img src="portfolio-images/bedroom/64.jpg" alt="Bedroom Interior">
+          <img src="images/bedroom/64.jpg" alt="Bedroom Interior">
           <div class="portfolio-grid-item__overlay">
             <span class="portfolio-grid-item__label">Bedroom</span>
           </div>
@@ -1390,7 +1390,7 @@
       <!-- Kitchen -->
       <div class="portfolio-grid-item fade-in" data-category="kitchen">
         <figure>
-          <img src="portfolio-images/kitchen/26.jpg" alt="Kitchen Interior">
+          <img src="images/kitchen/26.jpg" alt="Kitchen Interior">
           <div class="portfolio-grid-item__overlay">
             <span class="portfolio-grid-item__label">Kitchen</span>
           </div>
@@ -1398,7 +1398,7 @@
       </div>
       <div class="portfolio-grid-item fade-in" data-category="kitchen">
         <figure>
-          <img src="portfolio-images/kitchen/43.jpg" alt="Kitchen Interior">
+          <img src="images/kitchen/43.jpg" alt="Kitchen Interior">
           <div class="portfolio-grid-item__overlay">
             <span class="portfolio-grid-item__label">Kitchen</span>
           </div>
@@ -1406,7 +1406,7 @@
       </div>
       <div class="portfolio-grid-item fade-in" data-category="kitchen">
         <figure>
-          <img src="portfolio-images/kitchen/45.jpg" alt="Kitchen Interior">
+          <img src="images/kitchen/45.jpg" alt="Kitchen Interior">
           <div class="portfolio-grid-item__overlay">
             <span class="portfolio-grid-item__label">Kitchen</span>
           </div>
@@ -1414,7 +1414,7 @@
       </div>
       <div class="portfolio-grid-item fade-in" data-category="kitchen">
         <figure>
-          <img src="portfolio-images/kitchen/47.jpg" alt="Kitchen Interior">
+          <img src="images/kitchen/47.jpg" alt="Kitchen Interior">
           <div class="portfolio-grid-item__overlay">
             <span class="portfolio-grid-item__label">Kitchen</span>
           </div>
@@ -1422,7 +1422,7 @@
       </div>
       <div class="portfolio-grid-item fade-in" data-category="kitchen">
         <figure>
-          <img src="portfolio-images/kitchen/48.jpg" alt="Kitchen Interior">
+          <img src="images/kitchen/48.jpg" alt="Kitchen Interior">
           <div class="portfolio-grid-item__overlay">
             <span class="portfolio-grid-item__label">Kitchen</span>
           </div>
@@ -1430,7 +1430,7 @@
       </div>
       <div class="portfolio-grid-item fade-in" data-category="kitchen">
         <figure>
-          <img src="portfolio-images/kitchen/49.jpg" alt="Kitchen Interior">
+          <img src="images/kitchen/49.jpg" alt="Kitchen Interior">
           <div class="portfolio-grid-item__overlay">
             <span class="portfolio-grid-item__label">Kitchen</span>
           </div>
@@ -1438,7 +1438,7 @@
       </div>
       <div class="portfolio-grid-item fade-in" data-category="kitchen">
         <figure>
-          <img src="portfolio-images/kitchen/59.jpg" alt="Kitchen Interior">
+          <img src="images/kitchen/59.jpg" alt="Kitchen Interior">
           <div class="portfolio-grid-item__overlay">
             <span class="portfolio-grid-item__label">Kitchen</span>
           </div>
@@ -1446,7 +1446,7 @@
       </div>
       <div class="portfolio-grid-item fade-in" data-category="kitchen">
         <figure>
-          <img src="portfolio-images/kitchen/60.jpg" alt="Kitchen Interior">
+          <img src="images/kitchen/60.jpg" alt="Kitchen Interior">
           <div class="portfolio-grid-item__overlay">
             <span class="portfolio-grid-item__label">Kitchen</span>
           </div>
@@ -1454,7 +1454,7 @@
       </div>
       <div class="portfolio-grid-item fade-in" data-category="kitchen">
         <figure>
-          <img src="portfolio-images/kitchen/61.jpg" alt="Kitchen Interior">
+          <img src="images/kitchen/61.jpg" alt="Kitchen Interior">
           <div class="portfolio-grid-item__overlay">
             <span class="portfolio-grid-item__label">Kitchen</span>
           </div>
@@ -1463,7 +1463,7 @@
       <!-- Bathroom -->
       <div class="portfolio-grid-item fade-in" data-category="bathroom">
         <figure>
-          <img src="portfolio-images/bathroom/13.1.jpg" alt="Bathroom Interior">
+          <img src="images/bathroom/13-1.jpg" alt="Bathroom Interior">
           <div class="portfolio-grid-item__overlay">
             <span class="portfolio-grid-item__label">Bathroom</span>
           </div>
@@ -1471,7 +1471,7 @@
       </div>
       <div class="portfolio-grid-item fade-in" data-category="bathroom">
         <figure>
-          <img src="portfolio-images/bathroom/13.2.jpg" alt="Bathroom Interior">
+          <img src="images/bathroom/13-2.jpg" alt="Bathroom Interior">
           <div class="portfolio-grid-item__overlay">
             <span class="portfolio-grid-item__label">Bathroom</span>
           </div>
@@ -1479,7 +1479,7 @@
       </div>
       <div class="portfolio-grid-item fade-in" data-category="bathroom">
         <figure>
-          <img src="portfolio-images/bathroom/36.jpg" alt="Bathroom Interior">
+          <img src="images/bathroom/36.jpg" alt="Bathroom Interior">
           <div class="portfolio-grid-item__overlay">
             <span class="portfolio-grid-item__label">Bathroom</span>
           </div>
@@ -1487,7 +1487,7 @@
       </div>
       <div class="portfolio-grid-item fade-in" data-category="bathroom">
         <figure>
-          <img src="portfolio-images/bathroom/54.jpg" alt="Bathroom Interior">
+          <img src="images/bathroom/54.jpg" alt="Bathroom Interior">
           <div class="portfolio-grid-item__overlay">
             <span class="portfolio-grid-item__label">Bathroom</span>
           </div>
@@ -1495,7 +1495,7 @@
       </div>
       <div class="portfolio-grid-item fade-in" data-category="bathroom">
         <figure>
-          <img src="portfolio-images/bathroom/55.jpg" alt="Bathroom Interior">
+          <img src="images/bathroom/55.jpg" alt="Bathroom Interior">
           <div class="portfolio-grid-item__overlay">
             <span class="portfolio-grid-item__label">Bathroom</span>
           </div>
@@ -1503,7 +1503,7 @@
       </div>
       <div class="portfolio-grid-item fade-in" data-category="bathroom">
         <figure>
-          <img src="portfolio-images/bathroom/56.jpg" alt="Bathroom Interior">
+          <img src="images/bathroom/56.jpg" alt="Bathroom Interior">
           <div class="portfolio-grid-item__overlay">
             <span class="portfolio-grid-item__label">Bathroom</span>
           </div>
@@ -1511,7 +1511,7 @@
       </div>
       <div class="portfolio-grid-item fade-in" data-category="bathroom">
         <figure>
-          <img src="portfolio-images/bathroom/57.jpg" alt="Bathroom Interior">
+          <img src="images/bathroom/57.jpg" alt="Bathroom Interior">
           <div class="portfolio-grid-item__overlay">
             <span class="portfolio-grid-item__label">Bathroom</span>
           </div>
@@ -1519,7 +1519,7 @@
       </div>
       <div class="portfolio-grid-item fade-in" data-category="bathroom">
         <figure>
-          <img src="portfolio-images/bathroom/58.jpg" alt="Bathroom Interior">
+          <img src="images/bathroom/58.jpg" alt="Bathroom Interior">
           <div class="portfolio-grid-item__overlay">
             <span class="portfolio-grid-item__label">Bathroom</span>
           </div>
@@ -1527,7 +1527,7 @@
       </div>
       <div class="portfolio-grid-item fade-in" data-category="bathroom">
         <figure>
-          <img src="portfolio-images/bathroom/6.jpg" alt="Bathroom Interior">
+          <img src="images/bathroom/6.jpg" alt="Bathroom Interior">
           <div class="portfolio-grid-item__overlay">
             <span class="portfolio-grid-item__label">Bathroom</span>
           </div>
@@ -1536,7 +1536,7 @@
       <!-- Unique -->
       <div class="portfolio-grid-item fade-in" data-category="unique">
         <figure>
-          <img src="portfolio-images/unique/0w4a3754.jpg" alt="Unique Interior">
+          <img src="images/unique/19.jpg" alt="Unique Interior">
           <div class="portfolio-grid-item__overlay">
             <span class="portfolio-grid-item__label">Unique</span>
           </div>
@@ -1544,7 +1544,7 @@
       </div>
       <div class="portfolio-grid-item fade-in" data-category="unique">
         <figure>
-          <img src="portfolio-images/unique/1.jpg" alt="Unique Interior">
+          <img src="images/unique/20.jpg" alt="Unique Interior">
           <div class="portfolio-grid-item__overlay">
             <span class="portfolio-grid-item__label">Unique</span>
           </div>
@@ -1552,7 +1552,7 @@
       </div>
       <div class="portfolio-grid-item fade-in" data-category="unique">
         <figure>
-          <img src="portfolio-images/unique/19-copy.jpg" alt="Unique Interior">
+          <img src="images/unique/22.jpg" alt="Unique Interior">
           <div class="portfolio-grid-item__overlay">
             <span class="portfolio-grid-item__label">Unique</span>
           </div>
@@ -1560,7 +1560,7 @@
       </div>
       <div class="portfolio-grid-item fade-in" data-category="unique">
         <figure>
-          <img src="portfolio-images/unique/19.jpg" alt="Unique Interior">
+          <img src="images/unique/23-copy.jpg" alt="Unique Interior">
           <div class="portfolio-grid-item__overlay">
             <span class="portfolio-grid-item__label">Unique</span>
           </div>
@@ -1568,7 +1568,7 @@
       </div>
       <div class="portfolio-grid-item fade-in" data-category="unique">
         <figure>
-          <img src="portfolio-images/unique/2.jpg" alt="Unique Interior">
+          <img src="images/unique/23.jpg" alt="Unique Interior">
           <div class="portfolio-grid-item__overlay">
             <span class="portfolio-grid-item__label">Unique</span>
           </div>
@@ -1576,7 +1576,7 @@
       </div>
       <div class="portfolio-grid-item fade-in" data-category="unique">
         <figure>
-          <img src="portfolio-images/unique/20.jpg" alt="Unique Interior">
+          <img src="images/unique/24-copy.jpg" alt="Unique Interior">
           <div class="portfolio-grid-item__overlay">
             <span class="portfolio-grid-item__label">Unique</span>
           </div>
@@ -1584,7 +1584,7 @@
       </div>
       <div class="portfolio-grid-item fade-in" data-category="unique">
         <figure>
-          <img src="portfolio-images/unique/21.jpg" alt="Unique Interior">
+          <img src="images/unique/25-copy.jpg" alt="Unique Interior">
           <div class="portfolio-grid-item__overlay">
             <span class="portfolio-grid-item__label">Unique</span>
           </div>
@@ -1592,7 +1592,7 @@
       </div>
       <div class="portfolio-grid-item fade-in" data-category="unique">
         <figure>
-          <img src="portfolio-images/unique/22.jpg" alt="Unique Interior">
+          <img src="images/unique/25.jpg" alt="Unique Interior">
           <div class="portfolio-grid-item__overlay">
             <span class="portfolio-grid-item__label">Unique</span>
           </div>
@@ -1600,7 +1600,7 @@
       </div>
       <div class="portfolio-grid-item fade-in" data-category="unique">
         <figure>
-          <img src="portfolio-images/unique/23-copy.jpg" alt="Unique Interior">
+          <img src="images/unique/27.jpg" alt="Unique Interior">
           <div class="portfolio-grid-item__overlay">
             <span class="portfolio-grid-item__label">Unique</span>
           </div>
@@ -1608,7 +1608,7 @@
       </div>
       <div class="portfolio-grid-item fade-in" data-category="unique">
         <figure>
-          <img src="portfolio-images/unique/23.jpg" alt="Unique Interior">
+          <img src="images/unique/30.jpg" alt="Unique Interior">
           <div class="portfolio-grid-item__overlay">
             <span class="portfolio-grid-item__label">Unique</span>
           </div>
@@ -1616,7 +1616,7 @@
       </div>
       <div class="portfolio-grid-item fade-in" data-category="unique">
         <figure>
-          <img src="portfolio-images/unique/24-copy.jpg" alt="Unique Interior">
+          <img src="images/unique/31.jpg" alt="Unique Interior">
           <div class="portfolio-grid-item__overlay">
             <span class="portfolio-grid-item__label">Unique</span>
           </div>
@@ -1624,7 +1624,7 @@
       </div>
       <div class="portfolio-grid-item fade-in" data-category="unique">
         <figure>
-          <img src="portfolio-images/unique/24.jpg" alt="Unique Interior">
+          <img src="images/unique/32.jpg" alt="Unique Interior">
           <div class="portfolio-grid-item__overlay">
             <span class="portfolio-grid-item__label">Unique</span>
           </div>
@@ -1632,7 +1632,7 @@
       </div>
       <div class="portfolio-grid-item fade-in" data-category="unique">
         <figure>
-          <img src="portfolio-images/unique/25-copy.jpg" alt="Unique Interior">
+          <img src="images/unique/33-copy.jpg" alt="Unique Interior">
           <div class="portfolio-grid-item__overlay">
             <span class="portfolio-grid-item__label">Unique</span>
           </div>
@@ -1640,7 +1640,7 @@
       </div>
       <div class="portfolio-grid-item fade-in" data-category="unique">
         <figure>
-          <img src="portfolio-images/unique/25.jpg" alt="Unique Interior">
+          <img src="images/unique/33.jpg" alt="Unique Interior">
           <div class="portfolio-grid-item__overlay">
             <span class="portfolio-grid-item__label">Unique</span>
           </div>
@@ -1648,7 +1648,7 @@
       </div>
       <div class="portfolio-grid-item fade-in" data-category="unique">
         <figure>
-          <img src="portfolio-images/unique/26.jpg" alt="Unique Interior">
+          <img src="images/unique/34.jpg" alt="Unique Interior">
           <div class="portfolio-grid-item__overlay">
             <span class="portfolio-grid-item__label">Unique</span>
           </div>
@@ -1656,7 +1656,7 @@
       </div>
       <div class="portfolio-grid-item fade-in" data-category="unique">
         <figure>
-          <img src="portfolio-images/unique/27.jpg" alt="Unique Interior">
+          <img src="images/unique/35.jpg" alt="Unique Interior">
           <div class="portfolio-grid-item__overlay">
             <span class="portfolio-grid-item__label">Unique</span>
           </div>
@@ -1664,7 +1664,7 @@
       </div>
       <div class="portfolio-grid-item fade-in" data-category="unique">
         <figure>
-          <img src="portfolio-images/unique/28.jpg" alt="Unique Interior">
+          <img src="images/unique/36.jpg" alt="Unique Interior">
           <div class="portfolio-grid-item__overlay">
             <span class="portfolio-grid-item__label">Unique</span>
           </div>
@@ -1672,7 +1672,7 @@
       </div>
       <div class="portfolio-grid-item fade-in" data-category="unique">
         <figure>
-          <img src="portfolio-images/unique/3.jpg" alt="Unique Interior">
+          <img src="images/unique/37.jpg" alt="Unique Interior">
           <div class="portfolio-grid-item__overlay">
             <span class="portfolio-grid-item__label">Unique</span>
           </div>
@@ -1680,7 +1680,7 @@
       </div>
       <div class="portfolio-grid-item fade-in" data-category="unique">
         <figure>
-          <img src="portfolio-images/unique/30.jpg" alt="Unique Interior">
+          <img src="images/unique/39.jpg" alt="Unique Interior">
           <div class="portfolio-grid-item__overlay">
             <span class="portfolio-grid-item__label">Unique</span>
           </div>
@@ -1688,7 +1688,7 @@
       </div>
       <div class="portfolio-grid-item fade-in" data-category="unique">
         <figure>
-          <img src="portfolio-images/unique/31-copy.jpg" alt="Unique Interior">
+          <img src="images/unique/42-copy.jpg" alt="Unique Interior">
           <div class="portfolio-grid-item__overlay">
             <span class="portfolio-grid-item__label">Unique</span>
           </div>
@@ -1696,7 +1696,7 @@
       </div>
       <div class="portfolio-grid-item fade-in" data-category="unique">
         <figure>
-          <img src="portfolio-images/unique/31.jpg" alt="Unique Interior">
+          <img src="images/unique/42.jpg" alt="Unique Interior">
           <div class="portfolio-grid-item__overlay">
             <span class="portfolio-grid-item__label">Unique</span>
           </div>
@@ -1704,7 +1704,7 @@
       </div>
       <div class="portfolio-grid-item fade-in" data-category="unique">
         <figure>
-          <img src="portfolio-images/unique/32.jpg" alt="Unique Interior">
+          <img src="images/unique/43.jpg" alt="Unique Interior">
           <div class="portfolio-grid-item__overlay">
             <span class="portfolio-grid-item__label">Unique</span>
           </div>
@@ -1712,7 +1712,7 @@
       </div>
       <div class="portfolio-grid-item fade-in" data-category="unique">
         <figure>
-          <img src="portfolio-images/unique/33-copy.jpg" alt="Unique Interior">
+          <img src="images/unique/44-copy.jpg" alt="Unique Interior">
           <div class="portfolio-grid-item__overlay">
             <span class="portfolio-grid-item__label">Unique</span>
           </div>
@@ -1720,7 +1720,7 @@
       </div>
       <div class="portfolio-grid-item fade-in" data-category="unique">
         <figure>
-          <img src="portfolio-images/unique/33.jpg" alt="Unique Interior">
+          <img src="images/unique/44.jpg" alt="Unique Interior">
           <div class="portfolio-grid-item__overlay">
             <span class="portfolio-grid-item__label">Unique</span>
           </div>
@@ -1728,7 +1728,7 @@
       </div>
       <div class="portfolio-grid-item fade-in" data-category="unique">
         <figure>
-          <img src="portfolio-images/unique/34.jpg" alt="Unique Interior">
+          <img src="images/unique/5.jpg" alt="Unique Interior">
           <div class="portfolio-grid-item__overlay">
             <span class="portfolio-grid-item__label">Unique</span>
           </div>
@@ -1736,127 +1736,7 @@
       </div>
       <div class="portfolio-grid-item fade-in" data-category="unique">
         <figure>
-          <img src="portfolio-images/unique/35.jpg" alt="Unique Interior">
-          <div class="portfolio-grid-item__overlay">
-            <span class="portfolio-grid-item__label">Unique</span>
-          </div>
-        </figure>
-      </div>
-      <div class="portfolio-grid-item fade-in" data-category="unique">
-        <figure>
-          <img src="portfolio-images/unique/36.jpg" alt="Unique Interior">
-          <div class="portfolio-grid-item__overlay">
-            <span class="portfolio-grid-item__label">Unique</span>
-          </div>
-        </figure>
-      </div>
-      <div class="portfolio-grid-item fade-in" data-category="unique">
-        <figure>
-          <img src="portfolio-images/unique/37.jpg" alt="Unique Interior">
-          <div class="portfolio-grid-item__overlay">
-            <span class="portfolio-grid-item__label">Unique</span>
-          </div>
-        </figure>
-      </div>
-      <div class="portfolio-grid-item fade-in" data-category="unique">
-        <figure>
-          <img src="portfolio-images/unique/39.jpg" alt="Unique Interior">
-          <div class="portfolio-grid-item__overlay">
-            <span class="portfolio-grid-item__label">Unique</span>
-          </div>
-        </figure>
-      </div>
-      <div class="portfolio-grid-item fade-in" data-category="unique">
-        <figure>
-          <img src="portfolio-images/unique/4.jpg" alt="Unique Interior">
-          <div class="portfolio-grid-item__overlay">
-            <span class="portfolio-grid-item__label">Unique</span>
-          </div>
-        </figure>
-      </div>
-      <div class="portfolio-grid-item fade-in" data-category="unique">
-        <figure>
-          <img src="portfolio-images/unique/42-copy.jpg" alt="Unique Interior">
-          <div class="portfolio-grid-item__overlay">
-            <span class="portfolio-grid-item__label">Unique</span>
-          </div>
-        </figure>
-      </div>
-      <div class="portfolio-grid-item fade-in" data-category="unique">
-        <figure>
-          <img src="portfolio-images/unique/42.jpg" alt="Unique Interior">
-          <div class="portfolio-grid-item__overlay">
-            <span class="portfolio-grid-item__label">Unique</span>
-          </div>
-        </figure>
-      </div>
-      <div class="portfolio-grid-item fade-in" data-category="unique">
-        <figure>
-          <img src="portfolio-images/unique/43-.jpg" alt="Unique Interior">
-          <div class="portfolio-grid-item__overlay">
-            <span class="portfolio-grid-item__label">Unique</span>
-          </div>
-        </figure>
-      </div>
-      <div class="portfolio-grid-item fade-in" data-category="unique">
-        <figure>
-          <img src="portfolio-images/unique/43.jpg" alt="Unique Interior">
-          <div class="portfolio-grid-item__overlay">
-            <span class="portfolio-grid-item__label">Unique</span>
-          </div>
-        </figure>
-      </div>
-      <div class="portfolio-grid-item fade-in" data-category="unique">
-        <figure>
-          <img src="portfolio-images/unique/44-copy.jpg" alt="Unique Interior">
-          <div class="portfolio-grid-item__overlay">
-            <span class="portfolio-grid-item__label">Unique</span>
-          </div>
-        </figure>
-      </div>
-      <div class="portfolio-grid-item fade-in" data-category="unique">
-        <figure>
-          <img src="portfolio-images/unique/44.jpg" alt="Unique Interior">
-          <div class="portfolio-grid-item__overlay">
-            <span class="portfolio-grid-item__label">Unique</span>
-          </div>
-        </figure>
-      </div>
-      <div class="portfolio-grid-item fade-in" data-category="unique">
-        <figure>
-          <img src="portfolio-images/unique/46.jpg" alt="Unique Interior">
-          <div class="portfolio-grid-item__overlay">
-            <span class="portfolio-grid-item__label">Unique</span>
-          </div>
-        </figure>
-      </div>
-      <div class="portfolio-grid-item fade-in" data-category="unique">
-        <figure>
-          <img src="portfolio-images/unique/5.jpg" alt="Unique Interior">
-          <div class="portfolio-grid-item__overlay">
-            <span class="portfolio-grid-item__label">Unique</span>
-          </div>
-        </figure>
-      </div>
-      <div class="portfolio-grid-item fade-in" data-category="unique">
-        <figure>
-          <img src="portfolio-images/unique/6.jpg" alt="Unique Interior">
-          <div class="portfolio-grid-item__overlay">
-            <span class="portfolio-grid-item__label">Unique</span>
-          </div>
-        </figure>
-      </div>
-      <div class="portfolio-grid-item fade-in" data-category="unique">
-        <figure>
-          <img src="portfolio-images/unique/7.jpg" alt="Unique Interior">
-          <div class="portfolio-grid-item__overlay">
-            <span class="portfolio-grid-item__label">Unique</span>
-          </div>
-        </figure>
-      </div>
-      <div class="portfolio-grid-item fade-in" data-category="unique">
-        <figure>
-          <img src="portfolio-images/unique/8.jpg" alt="Unique Interior">
+          <img src="images/unique/7.jpg" alt="Unique Interior">
           <div class="portfolio-grid-item__overlay">
             <span class="portfolio-grid-item__label">Unique</span>
           </div>
@@ -1865,7 +1745,7 @@
       <!-- Other -->
       <div class="portfolio-grid-item fade-in" data-category="other">
         <figure>
-          <img src="portfolio-images/other/0w4a3751.jpg" alt="Other Interior">
+          <img src="images/other/0w4a3756.jpg" alt="Other Interior">
           <div class="portfolio-grid-item__overlay">
             <span class="portfolio-grid-item__label">Other</span>
           </div>
@@ -1873,7 +1753,7 @@
       </div>
       <div class="portfolio-grid-item fade-in" data-category="other">
         <figure>
-          <img src="portfolio-images/other/0w4a3755.jpg" alt="Other Interior">
+          <img src="images/other/13.jpg" alt="Other Interior">
           <div class="portfolio-grid-item__overlay">
             <span class="portfolio-grid-item__label">Other</span>
           </div>
@@ -1881,7 +1761,7 @@
       </div>
       <div class="portfolio-grid-item fade-in" data-category="other">
         <figure>
-          <img src="portfolio-images/other/0w4a3756.jpg" alt="Other Interior">
+          <img src="images/other/18.jpg" alt="Other Interior">
           <div class="portfolio-grid-item__overlay">
             <span class="portfolio-grid-item__label">Other</span>
           </div>
@@ -1889,7 +1769,7 @@
       </div>
       <div class="portfolio-grid-item fade-in" data-category="other">
         <figure>
-          <img src="portfolio-images/other/0w4a3759.jpg" alt="Other Interior">
+          <img src="images/other/19.jpg" alt="Other Interior">
           <div class="portfolio-grid-item__overlay">
             <span class="portfolio-grid-item__label">Other</span>
           </div>
@@ -1897,7 +1777,7 @@
       </div>
       <div class="portfolio-grid-item fade-in" data-category="other">
         <figure>
-          <img src="portfolio-images/other/13.jpg" alt="Other Interior">
+          <img src="images/other/2.jpg" alt="Other Interior">
           <div class="portfolio-grid-item__overlay">
             <span class="portfolio-grid-item__label">Other</span>
           </div>
@@ -1905,7 +1785,7 @@
       </div>
       <div class="portfolio-grid-item fade-in" data-category="other">
         <figure>
-          <img src="portfolio-images/other/18.jpg" alt="Other Interior">
+          <img src="images/other/20.jpg" alt="Other Interior">
           <div class="portfolio-grid-item__overlay">
             <span class="portfolio-grid-item__label">Other</span>
           </div>
@@ -1913,7 +1793,7 @@
       </div>
       <div class="portfolio-grid-item fade-in" data-category="other">
         <figure>
-          <img src="portfolio-images/other/19.jpg" alt="Other Interior">
+          <img src="images/other/22.jpg" alt="Other Interior">
           <div class="portfolio-grid-item__overlay">
             <span class="portfolio-grid-item__label">Other</span>
           </div>
@@ -1921,7 +1801,7 @@
       </div>
       <div class="portfolio-grid-item fade-in" data-category="other">
         <figure>
-          <img src="portfolio-images/other/2.jpg" alt="Other Interior">
+          <img src="images/other/24.jpg" alt="Other Interior">
           <div class="portfolio-grid-item__overlay">
             <span class="portfolio-grid-item__label">Other</span>
           </div>
@@ -1929,7 +1809,7 @@
       </div>
       <div class="portfolio-grid-item fade-in" data-category="other">
         <figure>
-          <img src="portfolio-images/other/20.jpg" alt="Other Interior">
+          <img src="images/other/28.jpg" alt="Other Interior">
           <div class="portfolio-grid-item__overlay">
             <span class="portfolio-grid-item__label">Other</span>
           </div>
@@ -1937,7 +1817,7 @@
       </div>
       <div class="portfolio-grid-item fade-in" data-category="other">
         <figure>
-          <img src="portfolio-images/other/22.jpg" alt="Other Interior">
+          <img src="images/other/29-copy.jpg" alt="Other Interior">
           <div class="portfolio-grid-item__overlay">
             <span class="portfolio-grid-item__label">Other</span>
           </div>
@@ -1945,7 +1825,7 @@
       </div>
       <div class="portfolio-grid-item fade-in" data-category="other">
         <figure>
-          <img src="portfolio-images/other/24.jpg" alt="Other Interior">
+          <img src="images/other/29.jpg" alt="Other Interior">
           <div class="portfolio-grid-item__overlay">
             <span class="portfolio-grid-item__label">Other</span>
           </div>
@@ -1953,7 +1833,7 @@
       </div>
       <div class="portfolio-grid-item fade-in" data-category="other">
         <figure>
-          <img src="portfolio-images/other/28.jpg" alt="Other Interior">
+          <img src="images/other/30.jpg" alt="Other Interior">
           <div class="portfolio-grid-item__overlay">
             <span class="portfolio-grid-item__label">Other</span>
           </div>
@@ -1961,7 +1841,7 @@
       </div>
       <div class="portfolio-grid-item fade-in" data-category="other">
         <figure>
-          <img src="portfolio-images/other/29-copy.jpg" alt="Other Interior">
+          <img src="images/other/32.jpg" alt="Other Interior">
           <div class="portfolio-grid-item__overlay">
             <span class="portfolio-grid-item__label">Other</span>
           </div>
@@ -1969,7 +1849,7 @@
       </div>
       <div class="portfolio-grid-item fade-in" data-category="other">
         <figure>
-          <img src="portfolio-images/other/29.jpg" alt="Other Interior">
+          <img src="images/other/33.jpg" alt="Other Interior">
           <div class="portfolio-grid-item__overlay">
             <span class="portfolio-grid-item__label">Other</span>
           </div>
@@ -1977,7 +1857,7 @@
       </div>
       <div class="portfolio-grid-item fade-in" data-category="other">
         <figure>
-          <img src="portfolio-images/other/30.jpg" alt="Other Interior">
+          <img src="images/other/34.jpg" alt="Other Interior">
           <div class="portfolio-grid-item__overlay">
             <span class="portfolio-grid-item__label">Other</span>
           </div>
@@ -1985,7 +1865,7 @@
       </div>
       <div class="portfolio-grid-item fade-in" data-category="other">
         <figure>
-          <img src="portfolio-images/other/32.jpg" alt="Other Interior">
+          <img src="images/other/35.jpg" alt="Other Interior">
           <div class="portfolio-grid-item__overlay">
             <span class="portfolio-grid-item__label">Other</span>
           </div>
@@ -1993,7 +1873,7 @@
       </div>
       <div class="portfolio-grid-item fade-in" data-category="other">
         <figure>
-          <img src="portfolio-images/other/33.jpg" alt="Other Interior">
+          <img src="images/other/36.jpg" alt="Other Interior">
           <div class="portfolio-grid-item__overlay">
             <span class="portfolio-grid-item__label">Other</span>
           </div>
@@ -2001,7 +1881,7 @@
       </div>
       <div class="portfolio-grid-item fade-in" data-category="other">
         <figure>
-          <img src="portfolio-images/other/34.jpg" alt="Other Interior">
+          <img src="images/other/37.jpg" alt="Other Interior">
           <div class="portfolio-grid-item__overlay">
             <span class="portfolio-grid-item__label">Other</span>
           </div>
@@ -2009,7 +1889,7 @@
       </div>
       <div class="portfolio-grid-item fade-in" data-category="other">
         <figure>
-          <img src="portfolio-images/other/35.jpg" alt="Other Interior">
+          <img src="images/other/38.jpg" alt="Other Interior">
           <div class="portfolio-grid-item__overlay">
             <span class="portfolio-grid-item__label">Other</span>
           </div>
@@ -2017,7 +1897,7 @@
       </div>
       <div class="portfolio-grid-item fade-in" data-category="other">
         <figure>
-          <img src="portfolio-images/other/36.jpg" alt="Other Interior">
+          <img src="images/other/40-copy.jpg" alt="Other Interior">
           <div class="portfolio-grid-item__overlay">
             <span class="portfolio-grid-item__label">Other</span>
           </div>
@@ -2025,7 +1905,7 @@
       </div>
       <div class="portfolio-grid-item fade-in" data-category="other">
         <figure>
-          <img src="portfolio-images/other/37.jpg" alt="Other Interior">
+          <img src="images/other/40.jpg" alt="Other Interior">
           <div class="portfolio-grid-item__overlay">
             <span class="portfolio-grid-item__label">Other</span>
           </div>
@@ -2033,7 +1913,7 @@
       </div>
       <div class="portfolio-grid-item fade-in" data-category="other">
         <figure>
-          <img src="portfolio-images/other/38.jpg" alt="Other Interior">
+          <img src="images/other/41-copy.jpg" alt="Other Interior">
           <div class="portfolio-grid-item__overlay">
             <span class="portfolio-grid-item__label">Other</span>
           </div>
@@ -2041,7 +1921,7 @@
       </div>
       <div class="portfolio-grid-item fade-in" data-category="other">
         <figure>
-          <img src="portfolio-images/other/4-copy.jpg" alt="Other Interior">
+          <img src="images/other/41.jpg" alt="Other Interior">
           <div class="portfolio-grid-item__overlay">
             <span class="portfolio-grid-item__label">Other</span>
           </div>
@@ -2049,7 +1929,7 @@
       </div>
       <div class="portfolio-grid-item fade-in" data-category="other">
         <figure>
-          <img src="portfolio-images/other/40-copy.jpg" alt="Other Interior">
+          <img src="images/other/6.jpg" alt="Other Interior">
           <div class="portfolio-grid-item__overlay">
             <span class="portfolio-grid-item__label">Other</span>
           </div>
@@ -2057,7 +1937,7 @@
       </div>
       <div class="portfolio-grid-item fade-in" data-category="other">
         <figure>
-          <img src="portfolio-images/other/40.jpg" alt="Other Interior">
+          <img src="images/other/62.jpg" alt="Other Interior">
           <div class="portfolio-grid-item__overlay">
             <span class="portfolio-grid-item__label">Other</span>
           </div>
@@ -2065,7 +1945,7 @@
       </div>
       <div class="portfolio-grid-item fade-in" data-category="other">
         <figure>
-          <img src="portfolio-images/other/41-copy.jpg" alt="Other Interior">
+          <img src="images/other/63.jpg" alt="Other Interior">
           <div class="portfolio-grid-item__overlay">
             <span class="portfolio-grid-item__label">Other</span>
           </div>
@@ -2073,7 +1953,7 @@
       </div>
       <div class="portfolio-grid-item fade-in" data-category="other">
         <figure>
-          <img src="portfolio-images/other/41.jpg" alt="Other Interior">
+          <img src="images/other/65.jpg" alt="Other Interior">
           <div class="portfolio-grid-item__overlay">
             <span class="portfolio-grid-item__label">Other</span>
           </div>
@@ -2081,7 +1961,7 @@
       </div>
       <div class="portfolio-grid-item fade-in" data-category="other">
         <figure>
-          <img src="portfolio-images/other/42.jpg" alt="Other Interior">
+          <img src="images/other/7.jpg" alt="Other Interior">
           <div class="portfolio-grid-item__overlay">
             <span class="portfolio-grid-item__label">Other</span>
           </div>
@@ -2089,55 +1969,7 @@
       </div>
       <div class="portfolio-grid-item fade-in" data-category="other">
         <figure>
-          <img src="portfolio-images/other/5.jpg" alt="Other Interior">
-          <div class="portfolio-grid-item__overlay">
-            <span class="portfolio-grid-item__label">Other</span>
-          </div>
-        </figure>
-      </div>
-      <div class="portfolio-grid-item fade-in" data-category="other">
-        <figure>
-          <img src="portfolio-images/other/6.jpg" alt="Other Interior">
-          <div class="portfolio-grid-item__overlay">
-            <span class="portfolio-grid-item__label">Other</span>
-          </div>
-        </figure>
-      </div>
-      <div class="portfolio-grid-item fade-in" data-category="other">
-        <figure>
-          <img src="portfolio-images/other/62.jpg" alt="Other Interior">
-          <div class="portfolio-grid-item__overlay">
-            <span class="portfolio-grid-item__label">Other</span>
-          </div>
-        </figure>
-      </div>
-      <div class="portfolio-grid-item fade-in" data-category="other">
-        <figure>
-          <img src="portfolio-images/other/63.jpg" alt="Other Interior">
-          <div class="portfolio-grid-item__overlay">
-            <span class="portfolio-grid-item__label">Other</span>
-          </div>
-        </figure>
-      </div>
-      <div class="portfolio-grid-item fade-in" data-category="other">
-        <figure>
-          <img src="portfolio-images/other/65.jpg" alt="Other Interior">
-          <div class="portfolio-grid-item__overlay">
-            <span class="portfolio-grid-item__label">Other</span>
-          </div>
-        </figure>
-      </div>
-      <div class="portfolio-grid-item fade-in" data-category="other">
-        <figure>
-          <img src="portfolio-images/other/7.jpg" alt="Other Interior">
-          <div class="portfolio-grid-item__overlay">
-            <span class="portfolio-grid-item__label">Other</span>
-          </div>
-        </figure>
-      </div>
-      <div class="portfolio-grid-item fade-in" data-category="other">
-        <figure>
-          <img src="portfolio-images/other/9.jpg" alt="Other Interior">
+          <img src="images/other/9.jpg" alt="Other Interior">
           <div class="portfolio-grid-item__overlay">
             <span class="portfolio-grid-item__label">Other</span>
           </div>
@@ -2154,7 +1986,7 @@
     <div class="container">
       <div class="footer__inner">
         <div class="footer__brand">
-          <img src="BlackPeony_Logotipo_GO_alta.png" alt="Black Peony Interiors" class="footer__logo">
+          <img src="logo-light.png" alt="Black Peony Interiors" class="footer__logo">
           <p class="footer__tagline">Bold, elegant interiors for discerning clients.</p>
         </div>
         <div class="footer__col">
