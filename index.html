@@ -25,6 +25,7 @@
       --soft-stone: #D8D2C8;
       --muted-sage: #A7B09A;
       --warm-gold: #C6A66B;
+      --rose-gold: #C49C8C;
       --white: #FFFFFF;
     }
 
@@ -163,15 +164,14 @@
       right: 0;
       z-index: 100;
       padding: 1.5rem 0;
+      background: var(--black);
       transition: all 0.4s ease;
     }
 
     .nav--scrolled {
-      background: rgba(247, 243, 237, 0.95);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
+      background: var(--black);
       padding: 1rem 0;
-      box-shadow: 0 1px 0 rgba(183, 168, 154, 0.15);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
     }
 
     .nav__inner {
@@ -205,13 +205,13 @@
       letter-spacing: 0.2em;
       text-transform: uppercase;
       text-decoration: none;
-      color: var(--black);
+      color: var(--rose-gold);
       font-weight: 500;
       transition: color 0.3s ease;
     }
 
     .nav__link:hover {
-      color: var(--taupe);
+      color: var(--ivory);
     }
 
     .nav__cta {
@@ -219,16 +219,17 @@
       letter-spacing: 0.2em;
       text-transform: uppercase;
       text-decoration: none;
-      color: var(--black);
+      color: var(--rose-gold);
       font-weight: 500;
       padding: 0.7rem 1.8rem;
-      border: 1px solid var(--black);
+      background: transparent;
+      border: 1px solid var(--rose-gold);
       transition: all 0.3s ease;
     }
 
     .nav__cta:hover {
-      background: var(--black);
-      color: var(--ivory);
+      background: var(--rose-gold);
+      color: var(--black);
     }
 
     /* Mobile nav toggle */
@@ -246,7 +247,7 @@
       display: block;
       width: 24px;
       height: 1.5px;
-      background: var(--black);
+      background: var(--rose-gold);
       transition: all 0.3s ease;
     }
 
@@ -711,7 +712,6 @@
     .footer__logo {
       height: 30px;
       width: auto;
-      filter: invert(1) brightness(10);
       margin-bottom: 1rem;
     }
 
@@ -845,7 +845,7 @@
     }
 
     .nav__ig svg path {
-      fill: var(--black);
+      fill: var(--rose-gold);
     }
 
     /* Footer Instagram icon inline */
@@ -1034,11 +1034,10 @@
         top: 100%;
         left: 0;
         right: 0;
-        background: rgba(247, 243, 237, 0.98);
-        backdrop-filter: blur(20px);
+        background: var(--black);
         padding: 2rem 2.5rem;
         gap: 1.5rem;
-        border-bottom: 1px solid rgba(183, 168, 154, 0.15);
+        border-bottom: 1px solid rgba(196, 156, 140, 0.25);
       }
 
       .hero__title {
@@ -1071,7 +1070,7 @@
   <nav class="nav" id="nav">
     <div class="nav__inner">
       <a href="#hero">
-        <img src="logo-black.png" alt="Black Peony Interiors" class="nav__logo">
+        <img src="BlackPeony_Logotipo_GO_alta.png" alt="Black Peony Interiors" class="nav__logo">
       </a>
       <ul class="nav__links" id="navLinks">
         <li><a href="#services" class="nav__link">Services</a></li>
@@ -1327,7 +1326,7 @@
     <div class="container">
       <div class="footer__inner">
         <div class="footer__brand">
-          <img src="logo-light.png" alt="Black Peony Interiors" class="footer__logo">
+          <img src="BlackPeony_Logotipo_GO_alta.png" alt="Black Peony Interiors" class="footer__logo">
           <p class="footer__tagline">Bold, elegant interiors for discerning clients.</p>
         </div>
         <div class="footer__col">
