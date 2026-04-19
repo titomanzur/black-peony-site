@@ -13,6 +13,7 @@
       --taupe: #B7A89A;
       --soft-stone: #D8D2C8;
       --warm-gold: #C6A66B;
+      --rose-gold: #C49C8C;
       --white: #FFFFFF;
       --light-gray: #ECECEC;
     }
@@ -88,14 +89,14 @@
       left: 0;
       right: 0;
       z-index: 1000;
-      background-color: transparent;
+      background-color: var(--black);
       transition: background-color 0.3s ease, box-shadow 0.3s ease;
       padding: 1.5rem 0;
     }
 
     .nav--scrolled {
-      background-color: var(--white);
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+      background-color: var(--black);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
       padding: 1rem 0;
     }
 
@@ -126,7 +127,7 @@
     }
 
     .nav__link {
-      color: var(--black);
+      color: var(--rose-gold);
       text-decoration: none;
       font-size: 0.95rem;
       font-weight: 500;
@@ -136,12 +137,12 @@
     }
 
     .nav__link:hover {
-      color: var(--taupe);
+      color: var(--ivory);
     }
 
     .nav__link--active {
-      color: var(--taupe);
-      border-bottom: 1px solid var(--taupe);
+      color: var(--rose-gold);
+      border-bottom: 1px solid var(--rose-gold);
       padding-bottom: 0.2rem;
     }
 
@@ -151,7 +152,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      color: var(--black);
+      color: var(--rose-gold);
       transition: color 0.3s ease;
     }
 
@@ -162,12 +163,12 @@
     }
 
     .nav__ig:hover {
-      color: var(--taupe);
+      color: var(--ivory);
     }
 
     .nav__cta {
-      background-color: var(--black);
-      color: var(--white);
+      background-color: var(--rose-gold);
+      color: var(--black);
       padding: 0.75rem 1.5rem;
       border-radius: 2px;
       text-decoration: none;
@@ -178,7 +179,7 @@
     }
 
     .nav__cta:hover {
-      background-color: var(--taupe);
+      background-color: var(--ivory);
     }
 
     .nav__toggle {
@@ -194,7 +195,7 @@
     .nav__toggle span {
       width: 25px;
       height: 2px;
-      background-color: var(--black);
+      background-color: var(--rose-gold);
       transition: all 0.3s ease;
     }
 
@@ -403,7 +404,6 @@
       height: 40px;
       width: auto;
       margin-bottom: 1.5rem;
-      filter: brightness(0) invert(1);
     }
 
     .footer__tagline {
@@ -525,11 +525,11 @@
         top: 70px;
         left: 0;
         right: 0;
-        background-color: var(--white);
+        background-color: var(--black);
         flex-direction: column;
         gap: 1rem;
         padding: 2rem;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
         max-height: 0;
         overflow: hidden;
         transition: max-height 0.3s ease;
@@ -676,7 +676,7 @@
   <nav class="nav" id="nav">
     <div class="nav__inner">
       <a href="index.html">
-        <img src="logo-black.png" alt="Black Peony Interiors" class="nav__logo">
+        <img src="BlackPeony_Logotipo_GO_alta.png" alt="Black Peony Interiors" class="nav__logo">
       </a>
       <ul class="nav__links" id="navLinks">
         <li><a href="index.html#services" class="nav__link">Services</a></li>
@@ -784,7 +784,7 @@
     <div class="container">
       <div class="footer__inner">
         <div class="footer__brand">
-          <img src="logo-light.png" alt="Black Peony Interiors" class="footer__logo">
+          <img src="BlackPeony_Logotipo_GO_alta.png" alt="Black Peony Interiors" class="footer__logo">
           <p class="footer__tagline">Bold, elegant interiors for discerning clients.</p>
         </div>
         <div class="footer__col">
